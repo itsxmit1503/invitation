@@ -7,7 +7,7 @@ import { InvitationData } from "@/types/invitation";
 import { sound } from "@/lib/sound";
 import { EASE_EXPO } from "@/lib/motion";
 import GoldDivider from "@/components/ui/GoldDivider";
-import { CheckCircle2, Calendar, MapPin, Clock, Sparkles } from "lucide-react";
+import { CheckCircle2, Calendar, MapPin, Clock } from "lucide-react";
 
 interface AcceptCelebrationProps {
   invitation: InvitationData;
@@ -22,9 +22,9 @@ export default function AcceptCelebration({
     // Play Indian celebration song
     sound.playIndianSong();
 
-    // Elegant gold and ivory confetti bursts
+    // Modern academic palette confetti bursts (Teal, Sage, Coral, Off-White, Ink)
     const end = Date.now() + 2.5 * 1000;
-    const colors = ["#D4AF37", "#F6E3B4", "#FFFFFF", "#C5A880", "#851B27"];
+    const colors = ["#4E7475", "#788B78", "#C77C67", "#F3F1EA", "#6A9B9C"];
 
     const frame = () => {
       confetti({
@@ -71,73 +71,73 @@ export default function AcceptCelebration({
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ type: "spring", stiffness: 280, damping: 20, delay: 0.15 }}
-        className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#181512] border-2 border-[#D4AF37] flex flex-col items-center justify-center mb-6 shadow-[0_0_35px_rgba(212,175,55,0.35)] relative"
+        className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-[#171A1D] border-2 border-[#4E7475] flex flex-col items-center justify-center mb-6 shadow-[0_12px_32px_rgba(78,116,117,0.35)] relative"
       >
-        <CheckCircle2 className="w-10 h-10 text-[#E8C878]" />
-        <span className="text-[9px] font-accent uppercase tracking-widest text-[#D4AF37] font-bold mt-1">
-          Confirmed
+        <CheckCircle2 className="w-10 h-10 text-[#4E7475]" />
+        <span className="text-[9px] font-mono uppercase tracking-widest text-[#788B78] font-bold mt-1">
+          CONFIRMED
         </span>
       </motion.div>
 
       {/* Primary Warm Headline */}
-      <span className="text-xs uppercase tracking-[0.35em] text-[#D4AF37] font-medium mb-2">
-        With Our Deepest Gratitude
+      <span className="text-xs font-mono uppercase tracking-[0.3em] text-[#788B78] font-semibold mb-2">
+        [ RSVP STATUS // GRACIOUSLY CONFIRMED ]
       </span>
 
-      <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#FDFBF7] font-semibold tracking-tight mb-3">
+      <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#F3F1EA] font-extrabold tracking-tight mb-3">
         Wonderful! We are genuinely honored, <br />
-        <span className="gold-foil-text italic font-serif">{invitation.recipientName}</span>.
+        <span className="text-[#4E7475]">{invitation.recipientName}</span>.
       </h1>
 
-      <p className="text-sm sm:text-base text-[#D1C9BD] max-w-md leading-relaxed font-light mb-6">
-        Your presence makes <span className="text-[#FDFBF7] font-medium">{invitation.eventName}</span> truly complete and memorable for the entire incoming batch.
+      <p className="text-sm sm:text-base text-[#D8D5CB] max-w-md leading-relaxed font-light mb-6">
+        Your presence makes <span className="text-[#F3F1EA] font-semibold">{invitation.eventName}</span> truly complete and memorable for the entire incoming batch.
       </p>
 
       <GoldDivider className="max-w-xs mb-8" />
 
       {/* Confirmed Details Ticket */}
-      <div className="tactile-card ornate-border w-full p-6 sm:p-7 rounded-2xl text-left mb-8 relative">
-        <div className="flex items-center justify-between border-b border-[#D4AF37]/20 pb-4 mb-4">
+      <div className="academic-card editorial-frame w-full p-6 sm:p-7 rounded-2xl text-left mb-8 relative border border-white/10">
+        <div className="flex items-center justify-between border-b border-white/8 pb-4 mb-4">
           <div>
-            <span className="text-[10px] uppercase tracking-[0.25em] text-[#D4AF37] font-semibold">
-              Special Guest Entry Pass
+            <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#788B78] font-semibold">
+              [ SPECIAL GUEST ENTRY PASS ]
             </span>
-            <h3 className="font-display text-xl sm:text-2xl text-[#FDFBF7] font-medium mt-0.5">
+            <h3 className="font-display text-xl sm:text-2xl text-[#F3F1EA] font-extrabold mt-0.5 uppercase">
               {invitation.eventName}
             </h3>
           </div>
           <div className="text-right">
-            <span className="text-[10px] font-mono tracking-wider text-[#A39E93] uppercase">
-              Seat Reservation
+            <span className="text-[10px] font-mono tracking-wider text-[#8A949E] uppercase">
+              PASS ID: FW26-VIP
             </span>
-            <p className="text-xs font-semibold text-[#E8C878]">
-              Front Row • VIP Faculty
+            <p className="text-xs font-mono font-bold text-[#4E7475] mt-0.5">
+              VIP FACULTY ROW
             </p>
           </div>
         </div>
 
-        <div className="tactile-inset rounded-xl p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+        <div className="academic-inset rounded-xl p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs border border-white/5">
           <div className="flex items-start gap-2.5">
-            <Calendar className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+            <Calendar className="w-4 h-4 text-[#4E7475] shrink-0 mt-0.5" />
             <div>
-              <p className="text-[#A39E93] text-[11px]">Date</p>
-              <p className="text-[#FDFBF7] font-medium">{invitation.eventDate}</p>
+              <p className="text-[#8A949E] text-[11px] font-mono uppercase">Date</p>
+              <p className="text-[#F3F1EA] font-medium mt-0.5">{invitation.eventDate}</p>
             </div>
           </div>
 
           <div className="flex items-start gap-2.5">
-            <Clock className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+            <Clock className="w-4 h-4 text-[#4E7475] shrink-0 mt-0.5" />
             <div>
-              <p className="text-[#A39E93] text-[11px]">Reporting Time</p>
-              <p className="text-[#FDFBF7] font-medium">{invitation.eventTime}</p>
+              <p className="text-[#8A949E] text-[11px] font-mono uppercase">Reporting Time</p>
+              <p className="text-[#F3F1EA] font-medium mt-0.5">{invitation.eventTime}</p>
             </div>
           </div>
 
           <div className="flex items-start gap-2.5 sm:col-span-2">
-            <MapPin className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+            <MapPin className="w-4 h-4 text-[#4E7475] shrink-0 mt-0.5" />
             <div>
-              <p className="text-[#A39E93] text-[11px]">Venue</p>
-              <p className="text-[#FDFBF7] font-medium">
+              <p className="text-[#8A949E] text-[11px] font-mono uppercase">Venue</p>
+              <p className="text-[#F3F1EA] font-medium mt-0.5">
                 {invitation.venue} {invitation.hallName && `— ${invitation.hallName}`}
               </p>
             </div>
@@ -151,7 +151,7 @@ export default function AcceptCelebration({
           href={createGoogleCalendarLink()}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-tactile-primary w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer"
+          className="btn-academic-primary w-full sm:w-auto px-6 py-3.5 rounded-xl font-display font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer"
         >
           <Calendar className="w-4 h-4" />
           <span>Add to Google Calendar</span>
@@ -161,7 +161,7 @@ export default function AcceptCelebration({
           <button
             type="button"
             onClick={onViewDetails}
-            className="btn-tactile-secondary w-full sm:w-auto px-6 py-3.5 rounded-xl text-xs tracking-wider uppercase transition-all cursor-pointer"
+            className="btn-academic-secondary w-full sm:w-auto px-6 py-3.5 rounded-xl font-display text-xs tracking-wider uppercase transition-all cursor-pointer font-semibold"
           >
             Review Invitation
           </button>
@@ -169,8 +169,8 @@ export default function AcceptCelebration({
       </div>
 
       {/* Sincere Footer Note */}
-      <p className="text-xs text-[#9E9588] mt-8 flex items-center gap-1.5 font-light">
-        <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
+      <p className="text-xs text-[#8A949E] font-mono mt-8 flex items-center gap-2 font-normal">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#C77C67]" />
         Arrangements for high-tea and commemorative memento have been noted.
       </p>
     </motion.div>

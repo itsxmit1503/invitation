@@ -1,36 +1,44 @@
 @import "tailwindcss";
 
 @theme {
-  --color-canvas: #090807;
-  --color-canvas-subtle: #0f0e0c;
-  --color-surface-base: #141210;
-  --color-surface-card: #191714;
-  --color-surface-elevated: #211e1a;
-  --color-surface-highlight: #2c2823;
+  --color-ink: #111315;
+  --color-ink-surface: #171a1d;
+  --color-ink-elevated: #1e2328;
+  --color-ink-border: #2b323a;
+  --color-ink-subtle: #14171a;
 
-  --color-gold-400: #e8c878;
-  --color-gold-500: #d4af37;
-  --color-gold-600: #b59228;
-  --color-gold-muted: rgba(212, 175, 55, 0.2);
-  --color-gold-glow: rgba(212, 175, 55, 0.12);
+  --color-offwhite: #f3f1ea;
+  --color-offwhite-dim: #d8d5cb;
+  --color-offwhite-muted: #8a949e;
 
-  --color-ivory: #fdfbf7;
-  --color-ivory-dim: #d1c9bd;
-  --color-ivory-muted: #9e9588;
+  --color-sage: #788b78;
+  --color-sage-light: #a4b9a4;
+  --color-sage-muted: rgba(120, 139, 120, 0.16);
 
-  --color-crimson-seal: #851b27;
-  --color-crimson-border: #ab2535;
+  --color-teal: #4e7475;
+  --color-teal-light: #6a9b9c;
+  --color-teal-dark: #375657;
+  --color-teal-glow: rgba(78, 116, 117, 0.25);
 
-  --font-display: var(--font-serif-display), Georgia, serif;
-  --font-accent: var(--font-serif-accent), Times New Roman, serif;
-  --font-body: var(--font-sans-body), system-ui, sans-serif;
+  --color-coral: #c77c67;
+  --color-coral-light: #e2a08f;
+  --color-coral-muted: rgba(199, 124, 103, 0.16);
+
+  --color-slate: #687078;
+  --color-slate-light: #8e99a4;
+
+  --font-display: var(--font-display), "Space Grotesk", sans-serif;
+  --font-body: var(--font-body), "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 :root {
-  --canvas-bg: #090807;
-  --surface-card: #141210;
-  --text-ivory: #fdfbf7;
-  --gold-primary: #d4af37;
+  --bg-ink: #111315;
+  --surface-ink: #171a1d;
+  --text-offwhite: #f3f1ea;
+  --accent-teal: #4e7475;
+  --accent-sage: #788b78;
+  --accent-coral: #c77c67;
 }
 
 /* Custom scrollbar */
@@ -38,113 +46,156 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #090807;
+  background: #111315;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.2);
+  background: rgba(78, 116, 117, 0.35);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(212, 175, 55, 0.4);
+  background: rgba(78, 116, 117, 0.65);
 }
 
-/* Grain overlay */
+/* Paper grain overlay */
 .bg-grain {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
 }
 
-/* Tactile invitation surface with solid physical depth and metallic rim */
-.tactile-card {
-  background: #151310;
+/* Technical editorial grid background pattern */
+.academic-grid {
+  background-size: 32px 32px;
   background-image: 
-    radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.05) 0%, transparent 70%),
-    linear-gradient(180deg, #181512 0%, #11100e 100%);
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Modern academic solid tactile card */
+.academic-card,
+.tactile-card {
+  background: #171a1d;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(78, 116, 117, 0.07) 0%, transparent 65%),
+    linear-gradient(180deg, #1c2024 0%, #15181b 100%);
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 0.08) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.85) inset,
+    0 24px 48px -12px rgba(0, 0, 0, 0.8),
+    0 4px 16px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Raised academic card for key focus elements */
+.academic-card-elevated,
+.tactile-card-raised {
+  background: #1e2328;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(78, 116, 117, 0.12) 0%, transparent 70%),
+    linear-gradient(180deg, #22272e 0%, #1a1e23 100%);
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 0.11) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.9) inset,
+    0 32px 64px -16px rgba(0, 0, 0, 0.85),
+    0 8px 24px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(78, 116, 117, 0.35);
+}
+
+/* Debossed / sunken container for schedule blocks and image wells */
+.academic-inset,
+.tactile-inset {
+  background: #121417;
+  box-shadow: 
+    0 3px 8px 0 rgba(0, 0, 0, 0.8) inset,
+    0 -1px 0 0 rgba(255, 255, 255, 0.04) inset;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Editorial status badges & pill annotations */
+.academic-tag,
+.tactile-pill {
+  background: linear-gradient(180deg, #20262c 0%, #171b1f 100%);
+  color: #a4b9a4;
   box-shadow: 
     0 1px 0 0 rgba(255, 255, 255, 0.07) inset,
-    0 -1px 0 0 rgba(0, 0, 0, 0.9) inset,
-    0 24px 48px -12px rgba(0, 0, 0, 0.85),
-    0 4px 16px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(212, 175, 55, 0.22);
+    0 -1px 0 0 rgba(0, 0, 0, 0.6) inset,
+    0 2px 6px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(120, 139, 120, 0.28);
 }
 
-.tactile-card-raised {
-  background: linear-gradient(175deg, #1c1916 0%, #141210 100%);
-  box-shadow: 
-    0 1px 0 0 rgba(255, 255, 255, 0.09) inset,
-    0 -1px 0 0 rgba(0, 0, 0, 0.9) inset,
-    0 32px 64px -16px rgba(0, 0, 0, 0.9),
-    0 8px 24px rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(212, 175, 55, 0.28);
-}
-
-/* Debossed / sunken container for images and schedule wells */
-.tactile-inset {
-  background: #0d0c0a;
-  box-shadow: 
-    0 3px 8px 0 rgba(0, 0, 0, 0.85) inset,
-    0 -1px 0 0 rgba(255, 255, 255, 0.04) inset;
-  border: 1px solid rgba(212, 175, 55, 0.14);
-}
-
-/* Small tactile pill badges & counters */
-.tactile-pill {
-  background: linear-gradient(180deg, #201c18 0%, #151310 100%);
+.academic-tag-teal {
+  background: linear-gradient(180deg, #1c2729 0%, #141f21 100%);
+  color: #79a7a8;
   box-shadow: 
     0 1px 0 0 rgba(255, 255, 255, 0.08) inset,
     0 -1px 0 0 rgba(0, 0, 0, 0.6) inset,
-    0 2px 6px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(212, 175, 55, 0.24);
+    0 2px 6px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(78, 116, 117, 0.38);
 }
 
-/* Tactile Primary Button (Accept) */
-.btn-tactile-primary {
-  background: linear-gradient(180deg, #e5bf55 0%, #d4af37 45%, #b89124 100%);
-  color: #0a0907;
+.academic-tag-coral {
+  background: linear-gradient(180deg, #2a1f1c 0%, #201715 100%);
+  color: #e2a08f;
   box-shadow: 
-    0 1px 0 0 rgba(255, 255, 255, 0.4) inset,
-    0 -2px 0 0 rgba(110, 83, 12, 0.7) inset,
-    0 8px 24px -4px rgba(212, 175, 55, 0.45),
-    0 2px 6px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 235, 175, 0.5);
+    0 1px 0 0 rgba(255, 255, 255, 0.08) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.6) inset,
+    0 2px 6px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(199, 124, 103, 0.38);
+}
+
+/* Primary Interactive Button: Confident Dusty Teal */
+.btn-academic-primary,
+.btn-tactile-primary {
+  background: linear-gradient(180deg, #598384 0%, #4e7475 45%, #3c5e5f 100%);
+  color: #f3f1ea;
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 0.28) inset,
+    0 -2px 0 0 rgba(19, 36, 37, 0.8) inset,
+    0 8px 24px -4px rgba(78, 116, 117, 0.45),
+    0 2px 6px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(125, 172, 173, 0.45);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.btn-academic-primary:hover,
 .btn-tactile-primary:hover {
-  background: linear-gradient(180deg, #ecc866 0%, #dbb844 45%, #c49d30 100%);
+  background: linear-gradient(180deg, #639293 0%, #568182 45%, #43696a 100%);
   box-shadow: 
-    0 1px 0 0 rgba(255, 255, 255, 0.5) inset,
-    0 -2px 0 0 rgba(110, 83, 12, 0.8) inset,
-    0 12px 32px -4px rgba(212, 175, 55, 0.6),
+    0 1px 0 0 rgba(255, 255, 255, 0.38) inset,
+    0 -2px 0 0 rgba(19, 36, 37, 0.9) inset,
+    0 12px 30px -4px rgba(78, 116, 117, 0.6),
     0 4px 10px rgba(0, 0, 0, 0.5);
   transform: translateY(-1px);
 }
+.btn-academic-primary:active,
 .btn-tactile-primary:active {
   box-shadow: 
-    0 2px 5px 0 rgba(0, 0, 0, 0.4) inset,
+    0 2px 5px 0 rgba(0, 0, 0, 0.5) inset,
     0 1px 2px rgba(0, 0, 0, 0.3);
   transform: translateY(1px);
 }
 
-/* Tactile Secondary Button (Reject / Review) */
+/* Secondary Interactive Button: Solid Deep Ink / Slate */
+.btn-academic-secondary,
 .btn-tactile-secondary {
-  background: linear-gradient(180deg, #1c1916 0%, #13110f 100%);
-  color: #c9c2b6;
+  background: linear-gradient(180deg, #22262b 0%, #191c20 100%);
+  color: #d8d5cb;
   box-shadow: 
-    0 1px 0 0 rgba(255, 255, 255, 0.07) inset,
+    0 1px 0 0 rgba(255, 255, 255, 0.08) inset,
     0 -1px 0 0 rgba(0, 0, 0, 0.85) inset,
-    0 4px 14px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(212, 175, 55, 0.22);
+    0 4px 14px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.btn-academic-secondary:hover,
 .btn-tactile-secondary:hover {
-  background: linear-gradient(180deg, #231f1b 0%, #171512 100%);
-  color: #fdfbf7;
-  border-color: rgba(212, 175, 55, 0.42);
+  background: linear-gradient(180deg, #2a3036 0%, #1f2328 100%);
+  color: #f3f1ea;
+  border-color: rgba(120, 139, 120, 0.4);
   box-shadow: 
-    0 1px 0 0 rgba(255, 255, 255, 0.1) inset,
+    0 1px 0 0 rgba(255, 255, 255, 0.12) inset,
     0 -1px 0 0 rgba(0, 0, 0, 0.9) inset,
-    0 6px 18px rgba(0, 0, 0, 0.6);
+    0 6px 18px rgba(0, 0, 0, 0.55);
   transform: translateY(-1px);
 }
+.btn-academic-secondary:active,
 .btn-tactile-secondary:active {
   box-shadow: 
     0 2px 5px 0 rgba(0, 0, 0, 0.7) inset,
@@ -152,44 +203,28 @@
   transform: translateY(1px);
 }
 
-/* Gold foil text shimmer */
-.gold-foil-text {
-  background: linear-gradient(135deg, #f7e7c4 0%, #dfba73 50%, #b88f3c 100%);
+/* Subtle editorial text highlights */
+.offwhite-gradient-text {
+  background: linear-gradient(180deg, #ffffff 0%, #dedbd2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.ivory-gradient-text {
-  background: linear-gradient(180deg, #ffffff 0%, #e0d8cd 100%);
+.teal-gradient-text {
+  background: linear-gradient(135deg, #a7d0d1 0%, #79a7a8 60%, #4e7475 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Double-lined ornate border */
-.ornate-border {
+/* Editorial corner bracket markings */
+.editorial-frame {
   position: relative;
 }
-.ornate-border::before {
+.editorial-frame::before {
   content: "";
   position: absolute;
-  inset: 5px;
-  border: 1px solid rgba(212, 175, 55, 0.16);
+  inset: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
   pointer-events: none;
   border-radius: inherit;
-}
-
-/* Subtle amber / gold glow pulse */
-@keyframes ambientGlow {
-  0%, 100% {
-    opacity: 0.35;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.55;
-    transform: scale(1.04);
-  }
-}
-
-.animate-ambient-glow {
-  animation: ambientGlow 8s ease-in-out infinite;
 }
