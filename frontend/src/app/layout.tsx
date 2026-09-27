@@ -29,7 +29,7 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${jakarta.variable} h-full overflow-hidden antialiased`}
     >
-      <body className="h-full w-full bg-[#111315] text-[#F3F1EA] font-sans selection:bg-[#4E7475]/30 selection:text-[#F3F1EA] overflow-hidden">
+      <body className="h-full w-full bg-[#18232B] text-[#F4F0E6] font-sans selection:bg-[#607D8B]/30 selection:text-[#F4F0E6] overflow-hidden">
         {children}
       </body>
     </html>
