@@ -137,5 +137,6 @@ export const REJECTION_REACTIONS: ReactionItem[] = [
     subtext: "Kuch aisa jo shayad aapne expect nahi kiya hoga...",
     stageTag: "The Final Turning Point",
     category: "absurd",
+    memeUrl: "/api/memes/attempt%2015%20ab%20hum%20kuch%20badlav%20karne%20wale%20h.jpg",
   },
 ];

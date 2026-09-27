@@ -256,30 +256,49 @@ export default function MainInvitation({
           <AnimatePresence mode="wait">
             {rejectCount === 0 && !finalStep ? (
               <motion.div
-                key="initial-welcome-emblem"
+                key="initial-welcome-meme"
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                className="academic-card editorial-frame w-full h-full max-h-full rounded-xl sm:rounded-2xl p-4 sm:p-5 flex flex-col items-center justify-center text-center relative border border-white/10"
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                className="academic-card editorial-frame w-full h-full max-h-full rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-5 relative overflow-hidden flex flex-col justify-between border border-white/10"
               >
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#171A1D] border-2 border-[#4E7475]/40 flex items-center justify-center mb-2.5 shadow-[0_8px_24px_rgba(78,116,117,0.25)]">
-                  <GraduationCap className="w-6 h-6 text-[#4E7475]" />
+                {/* Top calibration accent line */}
+                <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#4E7475]/60 to-transparent" />
+
+                {/* Header Tag */}
+                <div className="flex items-center justify-between gap-2 mb-1.5 shrink-0">
+                  <span className="inline-flex items-center gap-1.5 text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.2em] font-semibold px-2 py-0.5 rounded-md academic-tag-teal font-bold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#4E7475]" />
+                    Official Faculty Invitation
+                  </span>
+                  <span className="text-[10px] sm:text-[11px] tracking-wider text-[#8A949E] font-mono px-2 py-0.5 rounded-md bg-[#121417] border border-white/5">
+                    HONORED GUEST
+                  </span>
                 </div>
 
-                <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.25em] text-[#788B78] font-semibold mb-1.5">
-                  [ OFFICIAL BATCH GUEST ]
-                </span>
+                {/* Welcome Message */}
+                <div className="shrink-0 text-left">
+                  <p className="font-display text-xs sm:text-sm lg:text-base font-bold leading-snug text-[#F3F1EA]">
+                    A special invitation awaits your gracious acceptance.
+                  </p>
+                  <p className="text-[10px] sm:text-xs text-[#8A949E] mt-0.5 font-normal">
+                    We cordially invite you to grace the annual Freshers&apos; Welcome ceremony.
+                  </p>
+                </div>
 
-                <h3 className="font-display text-sm sm:text-base lg:text-lg text-[#F3F1EA] font-bold">
-                  Distinguished Faculty Presence
-                </h3>
-
-                <p className="text-[11px] sm:text-xs text-[#8A949E] max-w-xs mt-1.5 leading-relaxed">
-                  We eagerly await your gracious presence to inspire the students and commemorate this collegiate milestone.
-                </p>
-
-                <div className="mt-3 px-3 py-1 rounded-md academic-tag-teal text-[9px] sm:text-[10px] font-mono tracking-wider">
-                  HONORED GUEST • FRONT ROW
+                {/* Responsive Welcome Meme Image Slot with Full Aspect Preservation */}
+                <div className="my-1 sm:my-1.5 w-full flex-1 min-h-0 flex items-center justify-center rounded-lg academic-inset p-1 sm:p-2 overflow-hidden border border-white/6 bg-[#0E1113]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/api/memes/welcome.jpg"
+                    onError={(e) => {
+                      e.currentTarget.src = "/memes%20and%20sounds/welcome.jpg";
+                    }}
+                    alt="Welcome Meme"
+                    loading="eager"
+                    className="max-h-[16svh] sm:max-h-[20svh] md:max-h-[22svh] lg:max-h-[26svh] w-auto max-w-full object-contain rounded-md"
+                  />
                 </div>
               </motion.div>
             ) : (
