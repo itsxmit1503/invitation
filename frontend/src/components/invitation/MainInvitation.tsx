@@ -155,218 +155,211 @@ export default function MainInvitation({
       : null;
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-4 py-8 sm:py-14 flex flex-col items-center z-10">
-      {/* Top University & Faculty Seal */}
-      <header className="flex flex-col items-center text-center mb-8">
-        <div className="w-11 h-11 rounded-xl bg-[#171A1D] border border-[#788B78]/35 flex items-center justify-center mb-3 shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
-          <GraduationCap className="w-5 h-5 text-[#4E7475]" />
+    <div className="w-full max-w-5xl h-full max-h-[96svh] flex flex-col justify-between academic-card editorial-frame rounded-2xl sm:rounded-3xl p-3 sm:p-5 lg:p-6 relative overflow-hidden z-10 shadow-[0_20px_50px_rgba(0,0,0,0.85)]">
+      {/* Subtle technical editorial corner markings */}
+      <div className="absolute top-2.5 left-4 text-[9px] font-mono text-[#788B78]/40 select-none hidden sm:block">┌ FW-26</div>
+      <div className="absolute top-2.5 right-4 text-[9px] font-mono text-[#788B78]/40 select-none hidden sm:block">FACULTY ┐</div>
+
+      {/* Top Header Bar */}
+      <header className="flex items-center justify-between border-b border-white/8 pb-2 sm:pb-2.5 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#171A1D] border border-[#788B78]/35 flex items-center justify-center shrink-0 shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+            <GraduationCap className="w-4 h-4 text-[#4E7475]" />
+          </div>
+          <div>
+            <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.22em] text-[#788B78] font-semibold block leading-none">
+              {invitation.universityName}
+            </span>
+            <span className="text-[9px] sm:text-[10px] text-[#8A949E] tracking-wider uppercase block font-medium mt-0.5 leading-none">
+              {invitation.department}
+            </span>
+          </div>
         </div>
 
-        <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#788B78] font-semibold">
-          {invitation.universityName}
-        </span>
-
-        <h3 className="text-xs text-[#8A949E] tracking-widest uppercase mt-1 font-medium">
-          {invitation.department}
-        </h3>
-      </header>
-
-      {/* Main Bespoke Invitation Document */}
-      <main className="academic-card editorial-frame w-full rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 relative overflow-hidden">
-        {/* Subtle technical editorial corner markings */}
-        <div className="absolute top-4 left-4 text-[9px] font-mono text-[#788B78]/40 select-none hidden sm:block">┌ FW-26</div>
-        <div className="absolute top-4 right-4 text-[9px] font-mono text-[#788B78]/40 select-none hidden sm:block">FACULTY ┐</div>
-        <div className="absolute bottom-4 left-4 text-[9px] font-mono text-[#788B78]/40 select-none hidden sm:block">└ 2026</div>
-        <div className="absolute bottom-4 right-4 text-[9px] font-mono text-[#788B78]/40 select-none hidden sm:block">DEPT-INV ┘</div>
-
-        {/* Header Ribbon / Crest */}
-        <div className="flex flex-col items-center text-center">
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-md academic-tag text-[10px] font-mono uppercase tracking-[0.25em] mb-4">
+        <div className="flex items-center gap-2">
+          <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md academic-tag text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.2em]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#4E7475]" />
-            Official Faculty Convocation
+            Official Convocation
           </span>
-
-          <h1 className="font-display text-4xl sm:text-6xl text-[#F3F1EA] font-extrabold tracking-tight uppercase mb-2">
+          <h1 className="font-display text-xs sm:text-base lg:text-lg text-[#F3F1EA] font-extrabold tracking-tight uppercase">
             {invitation.eventName}
           </h1>
+        </div>
+      </header>
 
-          {invitation.eventTheme && (
-            <p className="font-mono text-xs sm:text-sm tracking-[0.22em] text-[#4E7475] uppercase mb-5">
-              — &ldquo;{invitation.eventTheme}&rdquo; —
+      {/* Main 2-Column Grid (Desktop) / Vertical Adaptive Stack (Mobile) */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 lg:gap-5 flex-1 min-h-0 my-2 sm:my-2.5 items-stretch">
+        {/* LEFT COLUMN: Salutation, Personalized Note & Event Details */}
+        <div className="md:col-span-6 lg:col-span-7 flex flex-col justify-between min-h-0 text-left">
+          {/* Salutation Card */}
+          <section className="flex-1 min-h-0 flex flex-col justify-center pr-0 md:pr-1">
+            <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.25em] text-[#788B78] font-semibold block">
+              [ INVITATION DELIVERED TO ]
+            </span>
+            <h2 className="font-display text-lg sm:text-2xl lg:text-3xl text-[#F3F1EA] font-extrabold tracking-tight mt-0.5 leading-tight">
+              {invitation.recipientName}
+            </h2>
+            <p className="text-[11px] sm:text-xs text-[#4E7475] font-semibold tracking-wide">
+              {invitation.designation} • {invitation.department}
             </p>
-          )}
 
-          <GoldDivider className="max-w-[220px] mb-6" />
+            {/* Sincere Letter Body */}
+            <div className="mt-2 sm:mt-2.5 pt-2 sm:pt-2.5 border-t border-white/8 text-xs sm:text-sm text-[#D8D5CB] leading-relaxed font-light">
+              <p className="font-display text-xs sm:text-sm text-[#F3F1EA] font-semibold mb-1">
+                {invitation.honorific || "Respected Professor"},
+              </p>
+              <p className="text-[11px] sm:text-xs lg:text-[13px] text-[#D8D5CB] leading-relaxed line-clamp-3 sm:line-clamp-none">
+                {invitation.personalNote || 
+                  "With deep respect and admiration for your mentorship, the students and organizing committee cordially invite you to grace the annual Freshers' Welcome ceremony as our esteemed mentor."}
+              </p>
+            </div>
+          </section>
+
+          {/* Event Schedule & Venue Strip */}
+          <section className="mt-2 rounded-xl academic-inset p-2 sm:p-2.5 border border-white/5 shrink-0">
+            <div className="grid grid-cols-3 gap-2 text-left">
+              <div className="flex items-start gap-1.5 sm:gap-2">
+                <Calendar className="w-3.5 h-3.5 text-[#4E7475] shrink-0 mt-0.5" />
+                <div className="min-w-0">
+                  <p className="text-[9px] font-mono uppercase tracking-wider text-[#788B78]">Date</p>
+                  <p className="text-[11px] sm:text-xs text-[#F3F1EA] font-medium truncate">
+                    {invitation.eventDate}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-1.5 sm:gap-2">
+                <Clock className="w-3.5 h-3.5 text-[#4E7475] shrink-0 mt-0.5" />
+                <div className="min-w-0">
+                  <p className="text-[9px] font-mono uppercase tracking-wider text-[#788B78]">Time</p>
+                  <p className="text-[11px] sm:text-xs text-[#F3F1EA] font-medium truncate">
+                    {invitation.eventTime}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-1.5 sm:gap-2">
+                <MapPin className="w-3.5 h-3.5 text-[#4E7475] shrink-0 mt-0.5" />
+                <div className="min-w-0">
+                  <p className="text-[9px] font-mono uppercase tracking-wider text-[#788B78]">Venue</p>
+                  <p className="text-[11px] sm:text-xs text-[#F3F1EA] font-medium truncate">
+                    {invitation.venue}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
 
-        {/* Personalized Salutation Section */}
-        <section className="my-4 text-left">
-          <p className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#788B78] font-semibold mb-1">
-            [ INVITATION DELIVERED TO ]
-          </p>
+        {/* RIGHT COLUMN: Visual Stage (Welcome Emblem OR Reaction Card) */}
+        <div className="md:col-span-6 lg:col-span-5 flex flex-col justify-center items-center min-h-0 relative">
+          <AnimatePresence mode="wait">
+            {rejectCount === 0 && !finalStep ? (
+              <motion.div
+                key="initial-welcome-emblem"
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                className="academic-card editorial-frame w-full h-full max-h-full rounded-xl sm:rounded-2xl p-4 sm:p-5 flex flex-col items-center justify-center text-center relative border border-white/10"
+              >
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#171A1D] border-2 border-[#4E7475]/40 flex items-center justify-center mb-2.5 shadow-[0_8px_24px_rgba(78,116,117,0.25)]">
+                  <GraduationCap className="w-6 h-6 text-[#4E7475]" />
+                </div>
 
-          <h2 className="font-display text-3xl sm:text-5xl text-[#F3F1EA] font-extrabold tracking-tight mt-1 mb-1">
-            {invitation.recipientName}
-          </h2>
+                <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.25em] text-[#788B78] font-semibold mb-1.5">
+                  [ OFFICIAL BATCH GUEST ]
+                </span>
 
-          <p className="text-xs sm:text-sm text-[#4E7475] font-semibold tracking-wide mt-1">
-            {invitation.designation}
-          </p>
+                <h3 className="font-display text-sm sm:text-base lg:text-lg text-[#F3F1EA] font-bold">
+                  Distinguished Faculty Presence
+                </h3>
 
-          <p className="text-xs text-[#8A949E] mt-0.5">
-            {invitation.department}
-          </p>
-
-          {/* Sincere Letter Body */}
-          <div className="mt-6 pt-6 border-t border-white/8">
-            <p className="font-display text-lg text-[#F3F1EA] font-semibold mb-3">
-              {invitation.honorific || "Respected Professor"},
-            </p>
-
-            <p className="text-sm text-[#D8D5CB] leading-relaxed font-light mb-4">
-              {invitation.personalNote || 
-                "With deep respect and admiration for your mentorship, the students and organizing committee cordially invite you to grace the annual Freshers' Welcome ceremony."}
-            </p>
-
-            <p className="text-sm text-[#D8D5CB] leading-relaxed font-light">
-              Your esteemed presence as our cherished mentor will inspire the fresh batch as they begin their collegiate journey.
-            </p>
-          </div>
-        </section>
-
-        {/* Event Schedule & Venue Highlight */}
-        <section className="my-8 rounded-xl academic-inset p-5 sm:p-6 border border-white/5">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 text-left">
-            <div className="flex items-start gap-3">
-              <div className="p-2.5 rounded-lg bg-[#1B2025] border border-white/8 text-[#4E7475] shrink-0 shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-                <Calendar className="w-4 h-4" />
-              </div>
-              <div>
-                <p className="text-[10px] font-mono uppercase tracking-wider text-[#788B78]">Date</p>
-                <p className="text-xs sm:text-sm text-[#F3F1EA] font-medium mt-0.5">
-                  {invitation.eventDate}
+                <p className="text-[11px] sm:text-xs text-[#8A949E] max-w-xs mt-1.5 leading-relaxed">
+                  We eagerly await your gracious presence to inspire the students and commemorate this collegiate milestone.
                 </p>
-              </div>
-            </div>
 
-            <div className="flex items-start gap-3">
-              <div className="p-2.5 rounded-lg bg-[#1B2025] border border-white/8 text-[#4E7475] shrink-0 shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-                <Clock className="w-4 h-4" />
-              </div>
-              <div>
-                <p className="text-[10px] font-mono uppercase tracking-wider text-[#788B78]">Time</p>
-                <p className="text-xs sm:text-sm text-[#F3F1EA] font-medium mt-0.5">
-                  {invitation.eventTime}
-                </p>
-              </div>
-            </div>
+                <div className="mt-3 px-3 py-1 rounded-md academic-tag-teal text-[9px] sm:text-[10px] font-mono tracking-wider">
+                  HONORED GUEST • FRONT ROW
+                </div>
+              </motion.div>
+            ) : (
+              <ReactionCard
+                reaction={currentReaction}
+                rejectCount={rejectCount}
+                finalStep={finalStep}
+              />
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
 
-            <div className="flex items-start gap-3 sm:col-span-1">
-              <div className="p-2.5 rounded-lg bg-[#1B2025] border border-white/8 text-[#4E7475] shrink-0 shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-                <MapPin className="w-4 h-4" />
-              </div>
-              <div>
-                <p className="text-[10px] font-mono uppercase tracking-wider text-[#788B78]">Venue</p>
-                <p className="text-xs sm:text-sm text-[#F3F1EA] font-medium mt-0.5">
-                  {invitation.venue}
-                </p>
-                {invitation.hallName && (
-                  <p className="text-[11px] text-[#8A949E] mt-0.5">{invitation.hallName}</p>
-                )}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Dedicated Reaction / Thought Card Area */}
-        <ReactionCard 
-          reaction={currentReaction} 
-          rejectCount={rejectCount} 
-          finalStep={finalStep}
-        />
-
-        {/* Primary Interactive Response Controls */}
-        <section className="mt-8 pt-6 border-t border-white/8 flex flex-col gap-3.5 items-center w-full">
-          {/* Always Available Accept Button */}
+      {/* BOTTOM INTERACTION ZONE: Always Anchored & Stable */}
+      <footer className="pt-2 sm:pt-2.5 border-t border-white/8 shrink-0 flex flex-col gap-1.5 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 w-full">
+          {/* Always Visible Accept Button */}
           <motion.button
             type="button"
             onClick={handleAcceptClick}
-            whileHover={{ scale: 1.015 }}
+            whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.985 }}
-            className={`btn-academic-primary w-full py-4 px-6 rounded-xl font-display font-bold text-sm uppercase tracking-[0.16em] flex items-center justify-center gap-2 cursor-pointer ${
+            className={`btn-academic-primary py-2.5 sm:py-3 px-4 rounded-xl font-display font-bold text-xs sm:text-sm uppercase tracking-[0.15em] flex items-center justify-center gap-2 cursor-pointer ${
               isFinalGlowActive
                 ? "shadow-[0_0_35px_rgba(78,116,117,0.7)] ring-2 ring-[#79A7A8] scale-[1.01]"
                 : ""
             }`}
           >
-            <Check className="w-5 h-5 stroke-[2.5]" />
+            <Check className="w-4 h-4 stroke-[2.5]" />
             <span>
               {isFinalGlowActive ? "ACCEPT INVITATION" : "Accept Invitation"}
             </span>
           </motion.button>
 
-          {/* Reject Button & Warning Container (Smoothly Exits in Final Stage) */}
+          {/* Reject Button (or Placeholder in final step) */}
           <AnimatePresence>
-            {isRejectButtonVisible && (
-              <motion.div
-                key="reject-interactive-block"
-                initial={{ opacity: 1, scale: 1, height: "auto" }}
-                exit={{ 
-                  opacity: 0, 
-                  scale: 0.95, 
-                  y: -10, 
-                  height: 0,
-                  transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } 
-                }}
-                className="w-full flex flex-col items-center gap-2 overflow-hidden"
+            {isRejectButtonVisible ? (
+              <motion.button
+                key="reject-btn"
+                type="button"
+                onClick={handleRejectClick}
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.98 }}
+                className="btn-academic-secondary py-2.5 sm:py-3 px-4 rounded-xl font-display text-xs uppercase tracking-[0.14em] font-semibold flex items-center justify-center gap-2 cursor-pointer"
               >
-                {/* Witty & Playful Reject Button */}
-                <motion.button
-                  type="button"
-                  onClick={handleRejectClick}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="btn-academic-secondary w-full py-3.5 px-6 rounded-xl font-display text-xs uppercase tracking-[0.15em] font-semibold flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  <X className="w-4 h-4 text-[#8A949E]" />
-                  <span>
-                    {rejectCount === 0 
-                      ? "Reject Invitation" 
-                      : rejectCount >= REJECTION_REACTIONS.length 
-                      ? "Proceed to Final Decision" 
-                      : "Reject Invitation"}
-                  </span>
-                </motion.button>
-
-                {/* Dignified & Playful Reject Warning Annotation */}
-                <div className="text-center pt-2 pb-0.5 select-none flex items-center justify-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C77C67]" />
-                  <p className="text-[11px] sm:text-xs text-[#8A949E] font-mono tracking-wider">
-                    <span className="text-[#C77C67] font-semibold">NOTE:</span> Reject at your own risk. You have been warned.
-                  </p>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C77C67]" />
-                </div>
-              </motion.div>
+                <X className="w-3.5 h-3.5 text-[#8A949E]" />
+                <span>
+                  {rejectCount === 0
+                    ? "Reject Invitation"
+                    : rejectCount >= REJECTION_REACTIONS.length
+                    ? "Proceed to Final Decision"
+                    : "Reject Invitation"}
+                </span>
+              </motion.button>
+            ) : (
+              <div className="hidden sm:flex items-center justify-center px-4 py-2 rounded-xl bg-[#14171A]/60 border border-[#4E7475]/30 text-[11px] font-mono text-[#79A7A8]">
+                Final decision reached • Acceptance mandatory 🙂
+              </div>
             )}
           </AnimatePresence>
+        </div>
 
-          {/* Share Invitation Link Button */}
+        {/* Subtext Bar: Warning Note & Share Link */}
+        <div className="flex items-center justify-between text-[10px] sm:text-[11px] text-[#8A949E] font-mono px-1">
+          <div className="flex items-center gap-1.5 truncate">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C77C67] shrink-0" />
+            <span className="truncate">
+              <span className="text-[#C77C67] font-semibold">NOTE:</span> Reject at your own risk.
+            </span>
+          </div>
+
           <button
             type="button"
             onClick={handleShare}
-            className="mt-2 text-[11px] text-[#8A949E] hover:text-[#79A7A8] flex items-center gap-1.5 transition-colors cursor-pointer px-3.5 py-1.5 rounded-md academic-tag-teal font-mono tracking-wider"
+            className="hover:text-[#79A7A8] flex items-center gap-1 transition-colors cursor-pointer shrink-0 ml-2"
           >
-            <Share2 className="w-3.5 h-3.5" />
-            <span>{copiedLink ? "Link copied to clipboard!" : "Share personalized link"}</span>
+            <Share2 className="w-3 h-3" />
+            <span>{copiedLink ? "Copied!" : "Share link"}</span>
           </button>
-        </section>
-      </main>
-
-      {/* Sincere Subtext */}
-      <footer className="text-center mt-6">
-        <p className="text-xs text-[#687078] font-mono tracking-wider">
-          Organized by the Batch of 2026 • University Campus
-        </p>
+        </div>
       </footer>
     </div>
   );

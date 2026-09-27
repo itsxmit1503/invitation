@@ -58,7 +58,7 @@ export default function EntranceExperience({
   };
 
   return (
-    <div className="relative min-h-screen flex flex-col justify-between items-center px-4 py-8 sm:py-12 z-10 max-w-xl mx-auto w-full select-none">
+    <div className="relative h-full max-h-full flex flex-col justify-between items-center px-4 py-3 sm:py-5 z-10 max-w-xl mx-auto w-full select-none overflow-hidden">
       {/* Top Header Bar */}
       <div className="w-full flex items-center justify-between text-xs tracking-wider uppercase text-[#8A949E] z-20">
         <button

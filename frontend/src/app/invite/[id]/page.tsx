@@ -26,5 +26,9 @@ export default async function InvitePage({ params }: InvitePageProps) {
   const { id } = await params;
   const invitation = getInvitationById(id);
 
-  return <InvitationExperience initialInvitation={invitation} />;
+  return (
+    <div className="relative h-[100svh] max-h-[100svh] w-full overflow-hidden">
+      <InvitationExperience initialInvitation={invitation} />
+    </div>
+  );
 }

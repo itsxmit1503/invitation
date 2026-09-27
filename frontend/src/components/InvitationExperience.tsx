@@ -42,7 +42,7 @@ export default function InvitationExperience({
   };
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-x-hidden">
+    <div className="relative h-[100svh] max-h-[100svh] w-full flex flex-col justify-center items-center overflow-hidden p-2 sm:p-3 lg:p-4">
       {/* Layer 1: Atmospheric Ambient Depth */}
       <AmbientBackdrop />
 
@@ -58,7 +58,7 @@ export default function InvitationExperience({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
             transition={{ duration: 0.7, ease: EASE_EXPO }}
-            className="w-full flex-1 flex flex-col justify-center items-center"
+            className="w-full h-full flex flex-col justify-center items-center overflow-hidden"
           >
             <EntranceExperience
               invitation={invitation}
@@ -72,7 +72,7 @@ export default function InvitationExperience({
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             exit={{ opacity: 0, scale: 0.96 }}
             transition={{ duration: 0.8, ease: EASE_EXPO }}
-            className="w-full flex-1 flex flex-col justify-center items-center"
+            className="w-full h-full flex flex-col justify-center items-center overflow-hidden"
           >
             <AcceptCelebration
               invitation={invitation}
@@ -86,7 +86,7 @@ export default function InvitationExperience({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, filter: "blur(4px)" }}
             transition={{ duration: 0.8, ease: EASE_EXPO }}
-            className="w-full flex-1 flex flex-col justify-center items-center"
+            className="w-full h-full flex flex-col justify-center items-center overflow-hidden"
           >
             <MainInvitation
               invitation={invitation}
