@@ -351,19 +351,52 @@ export default function MainInvitation({
           </AnimatePresence>
         </div>
 
-        {/* Subtext Bar: Warning Note & Share Link */}
-        <div className="flex items-center justify-between text-[10px] sm:text-[11px] text-[#1E4E8B] font-mono px-1">
-          <div className="flex items-center gap-1.5 truncate">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FF6F61] shrink-0" />
-            <span className="truncate">
-              <span className="text-[#FF6F61] font-bold">NOTE:</span> Reject at your own risk.
-            </span>
-          </div>
+        {/* Subtext Bar: Reject Hint & Share Link */}
+        <div className="flex items-center justify-between text-[10px] sm:text-[11px] text-[#1E4E8B] px-1 min-h-[22px]">
+          <AnimatePresence>
+            {rejectCount === 0 && !finalStep && (
+              <motion.div
+                key="reject-curiosity-hint"
+                initial={{ opacity: 0, y: 3 }}
+                animate={{ 
+                  opacity: [0.92, 1, 0.92],
+                  y: [0, -2, 0],
+                  x: [0, 1.5, 0],
+                }}
+                exit={{ opacity: 0, transition: { duration: 0.2 } }}
+                transition={{ 
+                  duration: 2.8, 
+                  repeat: Infinity, 
+                  ease: "easeInOut" 
+                }}
+                className="flex items-center gap-1.5 min-w-0 select-none mr-2"
+              >
+                <span className="font-display font-medium text-[11px] sm:text-xs text-[#0B2042] tracking-tight truncate">
+                  Psst… the other button is also worth considering. 👀
+                </span>
+                <svg 
+                  width="26" 
+                  height="16" 
+                  viewBox="0 0 26 16" 
+                  fill="none" 
+                  stroke="#FF6F61" 
+                  strokeWidth="2.2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  className="shrink-0 -mt-0.5"
+                  aria-hidden="true"
+                >
+                  <path d="M2 13 C 8 14.5, 16 12, 22 4" />
+                  <path d="M15 3.5 L 22.5 3.5 L 22 10.5" />
+                </svg>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           <button
             type="button"
             onClick={handleShare}
-            className="hover:text-[#0B2042] flex items-center gap-1 transition-colors cursor-pointer shrink-0 ml-2 font-medium"
+            className="hover:text-[#0B2042] flex items-center gap-1 transition-colors cursor-pointer shrink-0 ml-auto font-mono font-medium"
           >
             <Share2 className="w-3 h-3" />
             <span>{copiedLink ? "Copied!" : "Share link"}</span>
