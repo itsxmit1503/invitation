@@ -105,7 +105,7 @@ export default function AcceptCelebration({
             <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.25em] text-[#788B78] font-semibold block">
               [ INVITATION ACCEPTED ]
             </span>
-            <h2 className="font-display text-lg sm:text-2xl lg:text-3xl text-[#F3F1EA] font-extrabold tracking-tight mt-0.5 leading-tight">
+            <h2 className="font-display text-lg sm:text-2xl lg:text-3xl text-[#F3F1EA] font-extrabold tracking-tight mt-0.5 leading-tight break-words">
               Wonderful! We are genuinely honored, <br className="hidden sm:inline" />
               <span className="text-[#4E7475]">{invitation.recipientName}</span>.
             </h2>

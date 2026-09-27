@@ -200,7 +200,7 @@ export default function EntranceExperience({
                   Distinguished Faculty
                 </span>
 
-                <h2 className="font-display text-2xl sm:text-4xl text-[#F3F1EA] font-extrabold tracking-tight mb-2">
+                <h2 className="font-display text-2xl sm:text-4xl text-[#F3F1EA] font-extrabold tracking-tight mb-2 break-words text-center px-2">
                   {invitation.recipientName}
                 </h2>
 
@@ -236,7 +236,7 @@ export default function EntranceExperience({
               </p>
 
               <h3 className="font-display text-xl sm:text-2xl text-[#F3F1EA] font-bold mb-2">
-                {invitation.honorific || "Respected Professor"},
+                {invitation.honorific || "Respected Sir"},
               </h3>
 
               <p className="text-sm text-[#D8D5CB] max-w-xs leading-relaxed mb-8 font-light">

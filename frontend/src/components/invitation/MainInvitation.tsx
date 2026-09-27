@@ -196,7 +196,7 @@ export default function MainInvitation({
             <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.25em] text-[#788B78] font-semibold block">
               [ INVITATION DELIVERED TO ]
             </span>
-            <h2 className="font-display text-lg sm:text-2xl lg:text-3xl text-[#F3F1EA] font-extrabold tracking-tight mt-0.5 leading-tight">
+            <h2 className="font-display text-lg sm:text-2xl lg:text-3xl text-[#F3F1EA] font-extrabold tracking-tight mt-0.5 leading-tight break-words">
               {invitation.recipientName}
             </h2>
             <p className="text-[11px] sm:text-xs text-[#4E7475] font-semibold tracking-wide">
@@ -206,9 +206,9 @@ export default function MainInvitation({
             {/* Sincere Letter Body */}
             <div className="mt-2 sm:mt-2.5 pt-2 sm:pt-2.5 border-t border-white/8 text-xs sm:text-sm text-[#D8D5CB] leading-relaxed font-light">
               <p className="font-display text-xs sm:text-sm text-[#F3F1EA] font-semibold mb-1">
-                {invitation.honorific || "Respected Professor"},
+                {invitation.honorific || "Respected Sir"},
               </p>
-              <p className="text-[11px] sm:text-xs lg:text-[13px] text-[#D8D5CB] leading-relaxed line-clamp-3 sm:line-clamp-none">
+              <p className="text-[11px] sm:text-xs lg:text-[13px] text-[#D8D5CB] leading-relaxed line-clamp-4 sm:line-clamp-none">
                 {invitation.personalNote || 
                   "With deep respect and admiration for your mentorship, the students and organizing committee cordially invite you to grace the annual Freshers' Welcome ceremony as our esteemed mentor."}
               </p>
