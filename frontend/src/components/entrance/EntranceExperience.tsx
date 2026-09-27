@@ -64,7 +64,7 @@ export default function EntranceExperience({
         <button
           type="button"
           onClick={toggleSound}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#1A1815] border border-[#D4AF37]/20 hover:border-[#D4AF37]/50 text-[#C5BEB3] hover:text-[#E8C878] transition-colors cursor-pointer"
+          className="tactile-pill flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[#C5BEB3] hover:text-[#E8C878] transition-colors cursor-pointer"
           aria-label={isMuted ? "Unmute audio" : "Mute audio"}
         >
           {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-[#D4AF37]" />}
@@ -74,7 +74,7 @@ export default function EntranceExperience({
         <button
           type="button"
           onClick={onComplete}
-          className="px-3 py-1.5 rounded-full bg-[#1A1815]/60 hover:bg-[#1A1815] border border-white/5 hover:border-[#D4AF37]/30 text-[#9E9588] hover:text-[#FDFBF7] transition-all text-[11px] tracking-widest cursor-pointer"
+          className="tactile-pill px-3.5 py-1.5 rounded-full text-[#9E9588] hover:text-[#FDFBF7] transition-all text-[11px] tracking-widest cursor-pointer"
         >
           Skip Intro →
         </button>
@@ -196,7 +196,7 @@ export default function EntranceExperience({
               <div className="tactile-card ornate-border w-full py-7 px-6 rounded-2xl flex flex-col items-center relative overflow-hidden">
                 <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent" />
 
-                <span className="text-[11px] font-accent uppercase tracking-[0.3em] text-[#E8C878] mb-2 font-semibold">
+                <span className="text-[11px] font-accent uppercase tracking-[0.28em] text-[#E8C878] mb-2 font-semibold px-3 py-1 rounded-full tactile-pill">
                   Distinguished Faculty
                 </span>
 
@@ -286,9 +286,9 @@ export default function EntranceExperience({
           <motion.button
             type="button"
             onClick={handleNext}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-b from-[#25221D] to-[#181613] border border-[#D4AF37]/35 text-[#FDFBF7] hover:border-[#D4AF37]/70 hover:shadow-[0_4px_20px_rgba(212,175,55,0.18)] transition-all text-xs uppercase tracking-[0.2em] font-semibold cursor-pointer"
+            whileHover={{ scale: 1.015 }}
+            whileTap={{ scale: 0.985 }}
+            className="btn-tactile-secondary flex items-center gap-2 px-7 py-3 rounded-xl text-xs uppercase tracking-[0.2em] font-semibold cursor-pointer"
           >
             <span>Continue</span>
             <ChevronRight className="w-4 h-4 text-[#D4AF37]" />

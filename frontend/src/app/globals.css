@@ -53,25 +53,103 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
 }
 
-/* Tactile invitation surface with subtle depth and metallic rim */
+/* Tactile invitation surface with solid physical depth and metallic rim */
 .tactile-card {
-  background: linear-gradient(175deg, #171513 0%, #11100f 100%);
+  background: #151310;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.05) 0%, transparent 70%),
+    linear-gradient(180deg, #181512 0%, #11100e 100%);
   box-shadow: 
-    0 1px 1px 0 rgba(255, 255, 255, 0.06) inset,
-    0 -1px 1px 0 rgba(0, 0, 0, 0.8) inset,
-    0 24px 48px -12px rgba(0, 0, 0, 0.75),
-    0 4px 12px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(212, 175, 55, 0.16);
+    0 1px 0 0 rgba(255, 255, 255, 0.07) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.9) inset,
+    0 24px 48px -12px rgba(0, 0, 0, 0.85),
+    0 4px 16px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.22);
 }
 
 .tactile-card-raised {
-  background: linear-gradient(165deg, #1d1a17 0%, #141210 100%);
+  background: linear-gradient(175deg, #1c1916 0%, #141210 100%);
   box-shadow: 
-    0 1px 2px 0 rgba(255, 255, 255, 0.08) inset,
-    0 -1px 2px 0 rgba(0, 0, 0, 0.85) inset,
-    0 32px 64px -16px rgba(0, 0, 0, 0.85),
-    0 8px 24px rgba(0, 0, 0, 0.6);
+    0 1px 0 0 rgba(255, 255, 255, 0.09) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.9) inset,
+    0 32px 64px -16px rgba(0, 0, 0, 0.9),
+    0 8px 24px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+}
+
+/* Debossed / sunken container for images and schedule wells */
+.tactile-inset {
+  background: #0d0c0a;
+  box-shadow: 
+    0 3px 8px 0 rgba(0, 0, 0, 0.85) inset,
+    0 -1px 0 0 rgba(255, 255, 255, 0.04) inset;
+  border: 1px solid rgba(212, 175, 55, 0.14);
+}
+
+/* Small tactile pill badges & counters */
+.tactile-pill {
+  background: linear-gradient(180deg, #201c18 0%, #151310 100%);
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 0.08) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.6) inset,
+    0 2px 6px rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(212, 175, 55, 0.24);
+}
+
+/* Tactile Primary Button (Accept) */
+.btn-tactile-primary {
+  background: linear-gradient(180deg, #e5bf55 0%, #d4af37 45%, #b89124 100%);
+  color: #0a0907;
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 0.4) inset,
+    0 -2px 0 0 rgba(110, 83, 12, 0.7) inset,
+    0 8px 24px -4px rgba(212, 175, 55, 0.45),
+    0 2px 6px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 235, 175, 0.5);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-tactile-primary:hover {
+  background: linear-gradient(180deg, #ecc866 0%, #dbb844 45%, #c49d30 100%);
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 0.5) inset,
+    0 -2px 0 0 rgba(110, 83, 12, 0.8) inset,
+    0 12px 32px -4px rgba(212, 175, 55, 0.6),
+    0 4px 10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+}
+.btn-tactile-primary:active {
+  box-shadow: 
+    0 2px 5px 0 rgba(0, 0, 0, 0.4) inset,
+    0 1px 2px rgba(0, 0, 0, 0.3);
+  transform: translateY(1px);
+}
+
+/* Tactile Secondary Button (Reject / Review) */
+.btn-tactile-secondary {
+  background: linear-gradient(180deg, #1c1916 0%, #13110f 100%);
+  color: #c9c2b6;
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 0.07) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.85) inset,
+    0 4px 14px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-tactile-secondary:hover {
+  background: linear-gradient(180deg, #231f1b 0%, #171512 100%);
+  color: #fdfbf7;
+  border-color: rgba(212, 175, 55, 0.42);
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 0.1) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.9) inset,
+    0 6px 18px rgba(0, 0, 0, 0.6);
+  transform: translateY(-1px);
+}
+.btn-tactile-secondary:active {
+  box-shadow: 
+    0 2px 5px 0 rgba(0, 0, 0, 0.7) inset,
+    0 1px 2px rgba(0, 0, 0, 0.3);
+  transform: translateY(1px);
 }
 
 /* Gold foil text shimmer */
@@ -94,8 +172,8 @@
 .ornate-border::before {
   content: "";
   position: absolute;
-  inset: 4px;
-  border: 1px solid rgba(212, 175, 55, 0.15);
+  inset: 5px;
+  border: 1px solid rgba(212, 175, 55, 0.16);
   pointer-events: none;
   border-radius: inherit;
 }

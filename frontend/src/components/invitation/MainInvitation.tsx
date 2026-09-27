@@ -56,6 +56,7 @@ export default function MainInvitation({
 
   const startFinalSequence = () => {
     clearAllTimeouts();
+    sound.stopCurrentEffect();
 
     // Section 7: Immediately remove the "Proceed to Final Decision" button
     setIsRejectButtonVisible(false);
@@ -66,44 +67,44 @@ export default function MainInvitation({
     // Step 1: "Theek hai..."
     setFinalStep("theek_hai");
 
-    // Step 2: "Humne aapko kaafi mauke de diye."
+    // Step 2: "Humne aapko kaafi mauke de diye." (Deliberate reading pause)
     const t1 = setTimeout(() => {
       setFinalStep("kaafi_mauke");
-    }, 1800);
+    }, 3200);
     timeoutRefs.current.push(t1);
 
     // Step 3: "Aur aapne humein kaafi baar mana bhi diya."
     const t2 = setTimeout(() => {
       setFinalStep("kaafi_baar_mana");
-    }, 3600);
+    }, 6800);
     timeoutRefs.current.push(t2);
 
     // Step 4: "Aapne reject karne ki poori koshish kar li."
     const t3 = setTimeout(() => {
       setFinalStep("koshish_kar_li");
-    }, 5400);
+    }, 10400);
     timeoutRefs.current.push(t3);
 
     // Step 5: "Humne manane ki poori koshish kar li."
     const t4 = setTimeout(() => {
       setFinalStep("manane_ki_koshish");
-    }, 7200);
+    }, 14000);
     timeoutRefs.current.push(t4);
 
-    // Step 6: "Ab lagta hai..."
+    // Step 6: "Ab lagta hai..." (Short suspenseful pause before final reveal)
     const t5 = setTimeout(() => {
       setFinalStep("ab_lagta_hai");
-    }, 9000);
+    }, 17600);
     timeoutRefs.current.push(t5);
 
     // Step 7: Final image reveal + Punchline + Indian celebration song
     const t6 = setTimeout(() => {
       setFinalStep("aana_hi_padega");
       setIsFinalGlowActive(true);
-      // Section 9: Transition from sad violin to Indian celebration song
-      sound.fadeOrStopSadViolin(600);
+      // Clean crossfade: fade out sad violin, play Indian celebration song
+      sound.fadeOrStopSadViolin(500);
       sound.playIndianSong();
-    }, 10800);
+    }, 20600);
     timeoutRefs.current.push(t6);
   };
 
@@ -111,6 +112,9 @@ export default function MainInvitation({
     if (finalStep !== null) {
       return; // Sequence is already running
     }
+
+    // Immediately stop any currently playing reaction sound before switching states
+    sound.stopCurrentEffect();
 
     const nextCount = rejectCount + 1;
     setRejectCount(nextCount);
@@ -130,7 +134,7 @@ export default function MainInvitation({
       } else if (nextCount === 11) {
         sound.playMeow();
       }
-      // Attempts 2, 3, 4, 6, 7, 9, 10, 12, 13, 14, 15 play no sound
+      // Attempts 2, 3, 4, 6, 7, 9, 10, 12, 13, 14, 15 have no audio cues; previous audio was already cut off
     } else {
       // Reached beyond all attempts: trigger final transition sequence
       startFinalSequence();
@@ -232,10 +236,10 @@ export default function MainInvitation({
         </section>
 
         {/* Event Schedule & Venue Highlight */}
-        <section className="my-8 rounded-2xl bg-[#11100F] border border-[#D4AF37]/20 p-5 sm:p-6">
+        <section className="my-8 rounded-2xl tactile-inset p-5 sm:p-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 text-left">
             <div className="flex items-start gap-3">
-              <div className="p-2 rounded-lg bg-[#1D1A17] border border-[#D4AF37]/20 text-[#E8C878] shrink-0">
+              <div className="p-2.5 rounded-xl bg-[#1A1714] border border-[#D4AF37]/25 text-[#E8C878] shrink-0 shadow-[0_2px_5px_rgba(0,0,0,0.5)]">
                 <Calendar className="w-4 h-4" />
               </div>
               <div>
@@ -247,7 +251,7 @@ export default function MainInvitation({
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="p-2 rounded-lg bg-[#1D1A17] border border-[#D4AF37]/20 text-[#E8C878] shrink-0">
+              <div className="p-2.5 rounded-xl bg-[#1A1714] border border-[#D4AF37]/25 text-[#E8C878] shrink-0 shadow-[0_2px_5px_rgba(0,0,0,0.5)]">
                 <Clock className="w-4 h-4" />
               </div>
               <div>
@@ -259,7 +263,7 @@ export default function MainInvitation({
             </div>
 
             <div className="flex items-start gap-3 sm:col-span-1">
-              <div className="p-2 rounded-lg bg-[#1D1A17] border border-[#D4AF37]/20 text-[#E8C878] shrink-0">
+              <div className="p-2.5 rounded-xl bg-[#1A1714] border border-[#D4AF37]/25 text-[#E8C878] shrink-0 shadow-[0_2px_5px_rgba(0,0,0,0.5)]">
                 <MapPin className="w-4 h-4" />
               </div>
               <div>
@@ -288,12 +292,12 @@ export default function MainInvitation({
           <motion.button
             type="button"
             onClick={handleAcceptClick}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className={`w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-[#D4AF37] via-[#DFBA73] to-[#C5A880] text-[#090807] font-bold text-sm uppercase tracking-[0.18em] flex items-center justify-center gap-2 transition-all cursor-pointer ${
+            whileHover={{ scale: 1.015 }}
+            whileTap={{ scale: 0.985 }}
+            className={`btn-tactile-primary w-full py-4 px-6 rounded-2xl font-bold text-sm uppercase tracking-[0.18em] flex items-center justify-center gap-2 cursor-pointer ${
               isFinalGlowActive
                 ? "shadow-[0_0_35px_rgba(212,175,55,0.7)] ring-2 ring-[#FFF2D6] scale-[1.01]"
-                : "shadow-[0_6px_25px_rgba(212,175,55,0.4)] hover:shadow-[0_8px_32px_rgba(212,175,55,0.6)]"
+                : ""
             }`}
           >
             <Check className="w-5 h-5 stroke-[2.5]" />
@@ -322,8 +326,9 @@ export default function MainInvitation({
                 <motion.button
                   type="button"
                   onClick={handleRejectClick}
-                  whileTap={{ scale: 0.96 }}
-                  className="w-full py-3.5 px-6 rounded-2xl bg-[#161412] hover:bg-[#1C1916] border border-[#D4AF37]/25 hover:border-[#D4AF37]/50 text-[#C5BEB3] hover:text-[#FDFBF7] text-xs uppercase tracking-[0.15em] font-medium flex items-center justify-center gap-2 transition-all cursor-pointer"
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="btn-tactile-secondary w-full py-3.5 px-6 rounded-2xl text-xs uppercase tracking-[0.15em] font-medium flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <X className="w-4 h-4 text-[#A39E93]" />
                   <span>
@@ -335,8 +340,8 @@ export default function MainInvitation({
                   </span>
                 </motion.button>
 
-                {/* Section 2: Elegant Reject Warning */}
-                <div className="text-center pt-1 pb-1">
+                {/* Section 2: Dignified Reject Warning */}
+                <div className="text-center pt-1.5 pb-0.5 select-none">
                   <p className="text-[11px] sm:text-xs text-[#DFBA73] font-medium tracking-wide flex items-center justify-center gap-1.5 opacity-90">
                     <span>⚠️</span>
                     <span>Reject at your own risk.</span>
@@ -353,7 +358,7 @@ export default function MainInvitation({
           <button
             type="button"
             onClick={handleShare}
-            className="mt-2 text-[11px] text-[#A39E93] hover:text-[#E8C878] flex items-center gap-1.5 transition-colors cursor-pointer"
+            className="mt-2 text-[11px] text-[#A39E93] hover:text-[#E8C878] flex items-center gap-1.5 transition-colors cursor-pointer px-3 py-1.5 rounded-full tactile-pill"
           >
             <Share2 className="w-3.5 h-3.5" />
             <span>{copiedLink ? "Link copied to clipboard!" : "Share personalized link"}</span>

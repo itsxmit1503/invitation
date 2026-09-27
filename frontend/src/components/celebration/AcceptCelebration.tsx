@@ -102,7 +102,7 @@ export default function AcceptCelebration({
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#D4AF37] font-semibold">
               Special Guest Entry Pass
             </span>
-            <h3 className="font-display text-xl text-[#FDFBF7] font-medium mt-0.5">
+            <h3 className="font-display text-xl sm:text-2xl text-[#FDFBF7] font-medium mt-0.5">
               {invitation.eventName}
             </h3>
           </div>
@@ -116,7 +116,7 @@ export default function AcceptCelebration({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+        <div className="tactile-inset rounded-xl p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
           <div className="flex items-start gap-2.5">
             <Calendar className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
             <div>
@@ -146,12 +146,12 @@ export default function AcceptCelebration({
       </div>
 
       {/* Call to Actions */}
-      <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-3">
+      <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-3.5">
         <a
           href={createGoogleCalendarLink()}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#DFBA73] text-[#090807] font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 hover:shadow-[0_4px_20px_rgba(212,175,55,0.4)] transition-all cursor-pointer"
+          className="btn-tactile-primary w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer"
         >
           <Calendar className="w-4 h-4" />
           <span>Add to Google Calendar</span>
@@ -161,7 +161,7 @@ export default function AcceptCelebration({
           <button
             type="button"
             onClick={onViewDetails}
-            className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#1A1815] border border-[#D4AF37]/30 text-[#D1C9BD] hover:text-[#FDFBF7] hover:border-[#D4AF37]/60 text-xs tracking-wider uppercase transition-all cursor-pointer"
+            className="btn-tactile-secondary w-full sm:w-auto px-6 py-3.5 rounded-xl text-xs tracking-wider uppercase transition-all cursor-pointer"
           >
             Review Invitation
           </button>

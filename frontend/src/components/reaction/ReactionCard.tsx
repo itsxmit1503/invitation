@@ -47,17 +47,17 @@ export default function ReactionCard({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -14 }}
             transition={transitionConfig}
-            className="w-full rounded-2xl p-6 sm:p-7 bg-gradient-to-b from-[#221c17] to-[#181512] border-2 border-[#D4AF37] relative overflow-hidden shadow-[0_16px_36px_-6px_rgba(212,175,55,0.25)] text-center"
+            className="w-full rounded-2xl p-6 sm:p-7 bg-[#1c1814] border-2 border-[#D4AF37] relative overflow-hidden shadow-[0_20px_45px_-8px_rgba(0,0,0,0.85)] text-center tactile-card-raised"
           >
-            {/* Top gold ribbon */}
+            {/* Top gold ribbon accent */}
             <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-[#E8C878] to-transparent" />
 
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#32271D] border border-[#D4AF37]/40 text-[10px] sm:text-[11px] font-accent uppercase tracking-[0.25em] text-[#E8C878] font-bold mb-4">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full tactile-pill text-[10px] sm:text-[11px] font-accent uppercase tracking-[0.25em] text-[#E8C878] font-bold mb-4">
               <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
               Official Consensus Reached
             </div>
 
-            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl text-[#FDFBF7] font-extrabold tracking-tight mb-2 drop-shadow-[0_2px_10px_rgba(212,175,55,0.3)]">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl text-[#FDFBF7] font-extrabold tracking-tight mb-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               AAPKO AB AANA HI PADEGA. 😭
             </h2>
 
@@ -65,8 +65,8 @@ export default function ReactionCard({
               Ab aapke paas koi aur option nahi hai. 🙂
             </p>
 
-            {/* Final Punchline Meme Image (Fully Contained) */}
-            <div className="mt-5 w-full flex items-center justify-center rounded-xl bg-black/40 border border-[#D4AF37]/25 p-2 overflow-hidden shadow-inner">
+            {/* Final Punchline Meme Image (Fully Contained in tactile inset) */}
+            <div className="mt-5 w-full flex items-center justify-center rounded-xl tactile-inset p-3 overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={FINAL_PUNCHLINE_MEME}
@@ -84,11 +84,11 @@ export default function ReactionCard({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={transitionConfig}
-            className="w-full rounded-2xl p-6 bg-[#181512] border border-[#D4AF37]/40 relative overflow-hidden shadow-[0_12px_28px_-8px_rgba(0,0,0,0.7)] text-center"
+            className="w-full rounded-2xl p-7 tactile-card relative overflow-hidden text-center"
           >
             <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent" />
 
-            <span className="text-[10px] font-accent uppercase tracking-[0.25em] text-[#D4AF37] font-semibold block mb-2">
+            <span className="inline-block px-3 py-0.5 rounded-full tactile-pill text-[10px] font-accent uppercase tracking-[0.25em] text-[#D4AF37] font-semibold mb-3">
               Final Sequence
             </span>
 
@@ -99,25 +99,25 @@ export default function ReactionCard({
             )}
 
             {finalStep === "kaafi_mauke" && (
-              <p className="font-display text-xl sm:text-2xl text-[#FDFBF7] font-medium">
+              <p className="font-display text-xl sm:text-2xl text-[#FDFBF7] font-medium leading-relaxed">
                 &ldquo;Humne aapko kaafi mauke de diye.&rdquo;
               </p>
             )}
 
             {finalStep === "kaafi_baar_mana" && (
-              <p className="font-display text-xl sm:text-2xl text-[#FDFBF7] font-medium">
+              <p className="font-display text-xl sm:text-2xl text-[#FDFBF7] font-medium leading-relaxed">
                 &ldquo;Aur aapne humein kaafi baar mana bhi diya.&rdquo;
               </p>
             )}
 
             {finalStep === "koshish_kar_li" && (
-              <p className="font-display text-xl sm:text-2xl text-[#FDFBF7] font-medium">
+              <p className="font-display text-xl sm:text-2xl text-[#FDFBF7] font-medium leading-relaxed">
                 &ldquo;Aapne reject karne ki poori koshish kar li.&rdquo;
               </p>
             )}
 
             {finalStep === "manane_ki_koshish" && (
-              <p className="font-display text-xl sm:text-2xl text-[#FDFBF7] font-medium">
+              <p className="font-display text-xl sm:text-2xl text-[#FDFBF7] font-medium leading-relaxed">
                 &ldquo;Humne manane ki poori koshish kar li.&rdquo;
               </p>
             )}
@@ -136,10 +136,10 @@ export default function ReactionCard({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={transitionConfig}
-            className={`w-full rounded-2xl p-5 sm:p-6 bg-[#181512] relative overflow-hidden shadow-[0_12px_28px_-8px_rgba(0,0,0,0.7)] ${
+            className={`w-full rounded-2xl p-5 sm:p-6 relative overflow-hidden ${
               reaction.isMajorComedicMoment
-                ? "border-2 border-[#D4AF37] bg-gradient-to-b from-[#201B16] to-[#161412] shadow-[0_0_25px_rgba(212,175,55,0.2)]"
-                : "border border-[#D4AF37]/35"
+                ? "tactile-card-raised border-2 border-[#D4AF37]"
+                : "tactile-card"
             }`}
           >
             {/* Top gold trim */}
@@ -149,10 +149,10 @@ export default function ReactionCard({
 
             {/* Header Tag & Counter */}
             <div className="flex items-center justify-between gap-2 mb-3">
-              <span className={`inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-accent uppercase tracking-[0.2em] font-semibold px-2.5 py-1 rounded-full border ${
+              <span className={`inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-accent uppercase tracking-[0.2em] font-semibold px-2.5 py-1 rounded-full tactile-pill ${
                 reaction.isMajorComedicMoment
-                  ? "bg-[#352A1C] border-[#D4AF37]/60 text-[#F6E3B4]"
-                  : "bg-[#26211B] border-[#D4AF37]/20 text-[#E8C878]"
+                  ? "text-[#F6E3B4] border-[#D4AF37]/60"
+                  : "text-[#E8C878]"
               }`}>
                 {reaction.isMajorComedicMoment ? (
                   <Shield className="w-3.5 h-3.5 text-[#E8C878]" />
@@ -162,17 +162,17 @@ export default function ReactionCard({
                 {reaction.stageTag || "Faculty Appeal"}
               </span>
 
-              <span className="text-[11px] tracking-wider text-[#A39E93] font-mono">
+              <span className="text-[11px] tracking-wider text-[#A39E93] font-mono px-2 py-0.5 rounded-md bg-[#11100E] border border-[#D4AF37]/15">
                 Attempt #{rejectCount} of {REJECTION_REACTIONS.length}
               </span>
             </div>
 
             {/* Primary Witty Message */}
             <div className="flex items-start gap-3">
-              <div className={`mt-0.5 p-1.5 rounded-lg border shrink-0 hidden xs:flex ${
+              <div className={`mt-0.5 p-1.5 rounded-lg border shrink-0 hidden xs:flex shadow-[0_2px_4px_rgba(0,0,0,0.5)] ${
                 reaction.isMajorComedicMoment
-                  ? "bg-[#2F2519] border-[#D4AF37]/40 text-[#F6E3B4]"
-                  : "bg-[#241F1A] border-[#D4AF37]/15 text-[#E8C878]"
+                  ? "bg-[#292015] border-[#D4AF37]/45 text-[#F6E3B4]"
+                  : "bg-[#1C1814] border-[#D4AF37]/20 text-[#E8C878]"
               }`}>
                 {reaction.isMajorComedicMoment ? (
                   <AlertCircle className="w-4 h-4 text-[#D4AF37]" />
@@ -196,9 +196,9 @@ export default function ReactionCard({
               </div>
             </div>
 
-            {/* Responsive Meme Image Slot with Full Aspect Preservation (object-contain) */}
+            {/* Responsive Meme Image Slot with Full Aspect Preservation (object-contain in tactile-inset) */}
             {reaction.memeUrl && (
-              <div className="mt-4 w-full flex items-center justify-center rounded-xl bg-black/40 border border-[#D4AF37]/20 p-2 overflow-hidden shadow-inner">
+              <div className="mt-4 w-full flex items-center justify-center rounded-xl tactile-inset p-2.5 overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={reaction.memeUrl}
