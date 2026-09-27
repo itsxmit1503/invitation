@@ -50,6 +50,7 @@ export default function MainInvitation({
   const handleAcceptClick = () => {
     clearAllTimeouts();
     sound.stopAllRejectionSounds();
+    sound.retryPendingCelebration();
     onAccept();
   };
 
@@ -96,10 +97,12 @@ export default function MainInvitation({
     }, 17600);
     timeoutRefs.current.push(t5);
 
-    // Step 7: Final image reveal + Punchline (Sad violin continues playing until Accept is clicked)
+    // Step 7: Final image reveal + Punchline + Immediate transition to Indian celebration song
     const t6 = setTimeout(() => {
       setFinalStep("aana_hi_padega");
       setIsFinalGlowActive(true);
+      // Immediately stop sad violin, clear rejection audio, and start Indian celebration song
+      sound.playIndianSong();
     }, 20600);
     timeoutRefs.current.push(t6);
   };
