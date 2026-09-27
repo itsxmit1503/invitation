@@ -96,13 +96,10 @@ export default function MainInvitation({
     }, 17600);
     timeoutRefs.current.push(t5);
 
-    // Step 7: Final image reveal + Punchline + Indian celebration song
+    // Step 7: Final image reveal + Punchline (Sad violin continues playing until Accept is clicked)
     const t6 = setTimeout(() => {
       setFinalStep("aana_hi_padega");
       setIsFinalGlowActive(true);
-      // Clean crossfade: fade out sad violin, play Indian celebration song
-      sound.fadeOrStopSadViolin(500);
-      sound.playIndianSong();
     }, 20600);
     timeoutRefs.current.push(t6);
   };

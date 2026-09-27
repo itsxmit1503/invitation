@@ -10,18 +10,20 @@ export async function GET(
     const { filename } = await params;
     const decodedFilename = decodeURIComponent(filename);
 
-    const basePublicDir = path.join(process.cwd(), "public", "memes and sounds");
-    const baseLocalDir = path.join(process.cwd(), "memes and sounds");
+    const candidateDirs = [
+      path.join(process.cwd(), "public", "memes and sounds"),
+      path.join(process.cwd(), "memes and sounds"),
+      path.join(process.cwd(), "public", "celebration"),
+      path.join(process.cwd(), "celebration"),
+    ];
 
     let targetFilePath: string | null = null;
 
-    const candidate1 = path.join(basePublicDir, decodedFilename);
-    if (candidate1.startsWith(basePublicDir) && fs.existsSync(/*turbopackIgnore: true*/ candidate1)) {
-      targetFilePath = candidate1;
-    } else {
-      const candidate2 = path.join(baseLocalDir, decodedFilename);
-      if (candidate2.startsWith(baseLocalDir) && fs.existsSync(/*turbopackIgnore: true*/ candidate2)) {
-        targetFilePath = candidate2;
+    for (const dir of candidateDirs) {
+      const candidate = path.join(/*turbopackIgnore: true*/ dir, decodedFilename);
+      if (candidate.startsWith(dir) && fs.existsSync(/*turbopackIgnore: true*/ candidate)) {
+        targetFilePath = candidate;
+        break;
       }
     }
 

@@ -95,6 +95,41 @@ export default function AcceptCelebration({
 
       <GoldDivider className="max-w-xs mb-8" />
 
+      {/* Official Celebration Meme Showcase */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.2, ease: EASE_EXPO }}
+        className="academic-card editorial-frame w-full p-4 sm:p-5 rounded-2xl mb-8 relative border border-white/10 flex flex-col items-center text-center"
+      >
+        <div className="flex items-center justify-between w-full border-b border-white/8 pb-3 mb-3 px-1">
+          <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#788B78] font-semibold flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#4E7475]" />
+            Official Batch Celebration
+          </span>
+          <span className="text-[10px] font-mono tracking-wider text-[#8A949E] uppercase">
+            STATUS: RSVP ACCEPTED
+          </span>
+        </div>
+
+        <div className="academic-inset w-full rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center border border-white/5 bg-[#0C0F11]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/api/memes/celebration.jpg"
+            onError={(e) => {
+              // Graceful fallback to static route if needed
+              e.currentTarget.src = "/celebration/celebration.jpg";
+            }}
+            alt="Batch Celebration Meme"
+            className="max-h-[260px] sm:max-h-[320px] w-auto max-w-full rounded-lg object-contain shadow-lg border border-white/10 mx-auto"
+          />
+        </div>
+
+        <p className="text-xs sm:text-sm font-display text-[#F3F1EA] font-semibold mt-3">
+          We can&apos;t wait to welcome you to the grand event! 🎉
+        </p>
+      </motion.div>
+
       {/* Confirmed Details Ticket */}
       <div className="academic-card editorial-frame w-full p-6 sm:p-7 rounded-2xl text-left mb-8 relative border border-white/10">
         <div className="flex items-center justify-between border-b border-white/8 pb-4 mb-4">
