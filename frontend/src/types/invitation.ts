@@ -6,6 +6,8 @@ export interface InvitationData {
   department: string;
   universityName: string;
   eventName: string;
+  eventType?: string;
+  conductedBy?: string;
   eventTheme?: string;
   eventDate: string;
   eventTime: string;

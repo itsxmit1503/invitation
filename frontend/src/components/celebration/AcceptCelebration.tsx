@@ -50,11 +50,11 @@ export default function AcceptCelebration({
 
   // Google Calendar URL generator
   const createGoogleCalendarLink = () => {
-    const title = encodeURIComponent(`${invitation.eventName} - Freshers' Welcome`);
+    const title = encodeURIComponent(`${invitation.eventName} - ${invitation.eventType || "Freshers' Welcome 2026"}`);
     const details = encodeURIComponent(
-      `Annual Freshers' Welcome Ceremony.\nGuest of Honor: ${invitation.recipientName}\nDepartment: ${invitation.department}`
+      `${invitation.eventType || "Freshers' Welcome 2026"}.\n${invitation.conductedBy || "Conducted by BCA III Semester"}\nGuest of Honor: ${invitation.recipientName}\nDepartment: ${invitation.department}`
     );
-    const location = encodeURIComponent(`${invitation.venue}, ${invitation.hallName || ""}`);
+    const location = encodeURIComponent(`${invitation.venue}`);
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}`;
   };
 
@@ -124,12 +124,12 @@ export default function AcceptCelebration({
               </span>
             </div>
 
-            <div className="grid grid-cols-3 gap-2 text-left">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-left">
               <div className="flex items-start gap-1.5 sm:gap-2">
                 <Calendar className="w-3.5 h-3.5 text-[#1E4E8B] shrink-0 mt-0.5" />
                 <div className="min-w-0">
                   <p className="text-[9px] font-mono uppercase tracking-wider text-[#1E4E8B] font-bold">Date</p>
-                  <p className="text-[11px] sm:text-xs text-[#0B2042] font-semibold truncate">
+                  <p className="text-[11px] sm:text-xs text-[#0B2042] font-semibold leading-tight">
                     {invitation.eventDate}
                   </p>
                 </div>
@@ -139,17 +139,17 @@ export default function AcceptCelebration({
                 <Clock className="w-3.5 h-3.5 text-[#1E4E8B] shrink-0 mt-0.5" />
                 <div className="min-w-0">
                   <p className="text-[9px] font-mono uppercase tracking-wider text-[#1E4E8B] font-bold">Reporting</p>
-                  <p className="text-[11px] sm:text-xs text-[#0B2042] font-semibold truncate">
+                  <p className="text-[11px] sm:text-xs text-[#0B2042] font-semibold leading-tight">
                     {invitation.eventTime}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-1.5 sm:gap-2">
+              <div className="col-span-2 sm:col-span-1 flex items-start gap-1.5 sm:gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#1E4E8B] shrink-0 mt-0.5" />
                 <div className="min-w-0">
                   <p className="text-[9px] font-mono uppercase tracking-wider text-[#1E4E8B] font-bold">Venue</p>
-                  <p className="text-[11px] sm:text-xs text-[#0B2042] font-semibold truncate">
+                  <p className="text-[11px] sm:text-xs text-[#0B2042] font-semibold leading-tight break-words">
                     {invitation.venue}
                   </p>
                 </div>
@@ -220,7 +220,7 @@ export default function AcceptCelebration({
           <span className="w-1.5 h-1.5 rounded-full bg-[#FF6F61] shrink-0" />
           <span className="truncate">Arrangements for high-tea and commemorative memento have been noted.</span>
         </div>
-        <span className="hidden sm:inline text-[#1E4E8B] shrink-0 font-semibold">Batch of 2026</span>
+        <span className="hidden sm:inline text-[#1E4E8B] shrink-0 font-semibold">{invitation.conductedBy || "BCA III Semester"}</span>
       </footer>
     </motion.div>
   );

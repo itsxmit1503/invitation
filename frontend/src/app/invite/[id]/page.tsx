@@ -21,10 +21,10 @@ export async function generateMetadata({ params }: InvitePageProps): Promise<Met
 
   return {
     title: `Special Invitation for ${invitation.recipientName} | ${invitation.eventName}`,
-    description: `A cordial invitation for ${invitation.recipientName} to grace ${invitation.eventName} - Freshers' Welcome Ceremony.`,
+    description: `A cordial invitation for ${invitation.recipientName} to grace ${invitation.eventName} - Freshers' Welcome 2026, Conducted by BCA III Semester.`,
     openGraph: {
       title: `Special Invitation for ${invitation.recipientName}`,
-      description: `You are cordially invited to ${invitation.eventName} - Freshers' Welcome Ceremony.`,
+      description: `You are cordially invited to ${invitation.eventName} - Freshers' Welcome 2026, Conducted by BCA III Semester.`,
     },
   };
 }

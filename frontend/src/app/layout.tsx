@@ -15,8 +15,8 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Faculty Invitation | Freshers' Welcome 2026",
-  description: "A personalized, modern academic invitation experience for distinguished faculty members.",
+  title: "AARAMBH '26 | Freshers' Welcome 2026",
+  description: "Special Invitation for AARAMBH '26 - Freshers' Welcome 2026, Conducted by BCA III Semester.",
 };
 
 export default function RootLayout({

@@ -2,17 +2,18 @@ import { InvitationData } from "@/types/invitation";
 
 /**
  * Common event details shared across all faculty invitations.
- * Centralized here to avoid duplication.
+ * Centralized single source of truth for all components.
  */
 export const SHARED_EVENT_DETAILS = {
-  department: "Department of Computer Science & Applications",
-  universityName: "Faculty of Engineering & Technology",
   eventName: "AARAMBH '26",
-  eventTheme: "Echoes of Tomorrow",
-  eventDate: "Friday, 17th October 2026",
-  eventTime: "4:30 PM Onwards",
-  venue: "Main University Auditorium",
-  hallName: "Grand Amphitheatre, Block A",
+  eventType: "Freshers' Welcome 2026",
+  conductedBy: "Conducted by BCA III Semester",
+  department: "BCA III Semester",
+  universityName: "Conducted by BCA III Semester",
+  eventTheme: "Freshers' Welcome 2026",
+  eventDate: "Thursday, 1st October 2026",
+  eventTime: "11:00 AM to 04:00 PM Onwards",
+  venue: "Hotel Royal Palace, Rajghat Road, Tilli, Sagar",
   designation: "Honored Faculty Member",
 } as const;
 
@@ -42,7 +43,7 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
     recipientName: "Mr. Pangamban Sandesh Singh",
     honorific: "Respected Sir",
     personalNote:
-      "The organizing committee and the student community cordially invite you to be a part of our annual Freshers' Welcome. Your presence at the gathering would mean a great deal to all of us and add a profound sense of warmth to this milestone evening.",
+      "The organizing committee and the student community cordially invite you to be a part of our annual Freshers' Welcome. Your presence at the gathering would mean a great deal to all of us and add a profound sense of warmth to this milestone celebration.",
   },
   {
     slug: "kavita-sahu",
@@ -56,14 +57,14 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
     recipientName: "Mr. Abhishek Bansal",
     honorific: "Respected Sir",
     personalNote:
-      "We warmly invite you to grace the annual Freshers' Welcome as our honored guest. The commencement of a new academic session is a special occasion for our department, and celebrating this evening alongside you will be a genuine privilege for the entire batch.",
+      "We warmly invite you to grace the annual Freshers' Welcome as our honored guest. The commencement of a new academic session is a special occasion for our department, and celebrating this gathering alongside you will be a genuine privilege for the entire batch.",
   },
   {
     slug: "richa-pathak",
     recipientName: "Mrs. Richa Pathak",
     honorific: "Respected Ma'am",
     personalNote:
-      "On behalf of the students and organizing team, we humbly extend our cordial invitation to you for AARAMBH '26. Your presence would illuminate the auditorium and offer heartfelt encouragement to our freshers as they take their first steps into campus life.",
+      "On behalf of the students and organizing team, we humbly extend our cordial invitation to you for AARAMBH '26. Your presence would illuminate the gathering and offer heartfelt encouragement to our freshers as they take their first steps into campus life.",
   },
   {
     slug: "kamal-kant",
@@ -77,28 +78,28 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
     recipientName: "Miss. Anubha Prajapati",
     honorific: "Respected Ma'am",
     personalNote:
-      "With deep regard and enthusiasm, we cordially invite you to join us in welcoming the newest members of our university fraternity. Your presence at AARAMBH '26 will enrich the evening and provide meaningful inspiration to the incoming batch.",
+      "With deep regard and enthusiasm, we cordially invite you to join us in welcoming the newest members of our academic fraternity. Your presence at AARAMBH '26 will enrich the occasion and provide meaningful inspiration to the incoming batch.",
   },
   {
-    slug: "vidya-marksole",
-    recipientName: "Miss. Vidya Marksole",
+    slug: "vidya-marskole",
+    recipientName: "Miss. Vidya Marskole",
     honorific: "Respected Ma'am",
     personalNote:
-      "The student body extends a warm and respectful invitation for you to attend our annual Freshers' Welcome. As we gather to celebrate fresh beginnings and academic camaraderie, having you share this special evening with us would be our true honor.",
+      "The student body extends a warm and respectful invitation for you to attend our annual Freshers' Welcome. As we gather to celebrate fresh beginnings and academic camaraderie, having you share this special day with us would be our true honor.",
   },
   {
     slug: "shubham-maurya",
     recipientName: "Mr. Shubham Maurya",
     honorific: "Respected Sir",
     personalNote:
-      "We cordially invite you to grace AARAMBH '26 with your esteemed presence. The incoming students are embarking on an exciting academic chapter, and sharing this commemorative evening with you will leave an indelible mark on their campus memories.",
+      "We cordially invite you to grace AARAMBH '26 with your esteemed presence. The incoming students are embarking on an exciting academic chapter, and sharing this commemorative occasion with you will leave an indelible mark on their campus memories.",
   },
   {
     slug: "manas-ranjan-behera",
     recipientName: "Mr. Manas Ranjan Behera",
     honorific: "Respected Sir",
     personalNote:
-      "It would be our distinct honor to welcome you to the annual Freshers' Welcome celebration. Your gracious participation in the inaugural evening will bring immense encouragement to the students and mark the beginning of another promising academic year.",
+      "It would be our distinct honor to welcome you to the annual Freshers' Welcome celebration. Your gracious participation in the inaugural celebration will bring immense encouragement to the students and mark the beginning of another promising academic year.",
   },
   {
     slug: "suhana-singh",
@@ -119,7 +120,7 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
     recipientName: "Mr. Nitin Sir",
     honorific: "Respected Sir",
     personalNote:
-      "We respectfully invite you to grace our annual Freshers' Welcome ceremony. The students have organized this evening with great dedication, and having your blessing and presence in the auditorium will make the celebration truly special for all of us.",
+      "We respectfully invite you to grace our annual Freshers' Welcome ceremony. The students have organized this occasion with great dedication, and having your blessing and presence among us will make the celebration truly special for all of us.",
   },
   {
     slug: "rehan-gohar",
@@ -158,11 +159,12 @@ export const MOCK_INVITATIONS: Record<string, InvitationData> = FACULTY_RECIPIEN
       department: recipient.department || SHARED_EVENT_DETAILS.department,
       universityName: SHARED_EVENT_DETAILS.universityName,
       eventName: SHARED_EVENT_DETAILS.eventName,
+      eventType: SHARED_EVENT_DETAILS.eventType,
+      conductedBy: SHARED_EVENT_DETAILS.conductedBy,
       eventTheme: SHARED_EVENT_DETAILS.eventTheme,
       eventDate: SHARED_EVENT_DETAILS.eventDate,
       eventTime: SHARED_EVENT_DETAILS.eventTime,
       venue: SHARED_EVENT_DETAILS.venue,
-      hallName: SHARED_EVENT_DETAILS.hallName,
       personalNote: recipient.personalNote,
       accepted: false,
       rejectCount: 0,
@@ -173,12 +175,13 @@ export const MOCK_INVITATIONS: Record<string, InvitationData> = FACULTY_RECIPIEN
 );
 
 /**
- * Backward compatibility aliases for legacy demo IDs.
+ * Backward compatibility aliases for legacy demo IDs and previous slugs.
  */
 export const SLUG_ALIASES: Record<string, string> = {
   "7xk92lm": "ranjit-rajak",
   "9pq41za": "kavita-sahu",
   "default": "ranjit-rajak",
+  "vidya-marksole": "vidya-marskole",
 };
 
 /**

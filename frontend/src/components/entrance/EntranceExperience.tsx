@@ -98,15 +98,15 @@ export default function EntranceExperience({
               </div>
 
               <p className="text-[11px] font-mono uppercase tracking-[0.3em] text-[#1E4E8B] font-bold mb-3">
-                [ ACADEMIC FELLOWSHIP ]
+                [ {invitation.conductedBy || "Conducted by BCA III Semester"} ]
               </p>
 
-              <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-[#0B2042] uppercase max-w-sm mb-2">
-                {invitation.department}
+              <h2 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0B2042] uppercase max-w-sm mb-2">
+                {invitation.eventName}
               </h2>
 
               <p className="text-sm font-body text-[#1E4E8B] font-semibold tracking-wider mb-6">
-                {invitation.universityName}
+                {invitation.eventType || "Freshers' Welcome 2026"}
               </p>
 
               <GoldDivider className="max-w-[200px]" />
@@ -159,21 +159,19 @@ export default function EntranceExperience({
               </div>
 
               <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#1E4E8B] mb-2 font-bold">
-                ANNUAL WELCOMING CEREMONY
+                {invitation.eventType || "Freshers' Welcome 2026"}
               </span>
 
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-[#0B2042] font-extrabold tracking-tight mb-3 uppercase">
                 {invitation.eventName}
               </h1>
 
-              {invitation.eventTheme && (
-                <p className="font-mono text-xs sm:text-sm uppercase tracking-[0.22em] text-[#1E4E8B] font-semibold mb-4">
-                  Theme: {invitation.eventTheme}
-                </p>
-              )}
+              <p className="font-mono text-xs sm:text-sm uppercase tracking-[0.22em] text-[#1E4E8B] font-semibold mb-4">
+                {invitation.conductedBy || "Conducted by BCA III Semester"}
+              </p>
 
               <p className="text-sm text-[#0B2042] max-w-sm leading-relaxed">
-                The Batch of 2026 seeks your blessings, guidance, and presence as they embark on this formative chapter.
+                The students seek your blessings, guidance, and presence as we celebrate this special beginning.
               </p>
             </motion.div>
           )}

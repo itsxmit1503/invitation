@@ -161,10 +161,10 @@ export default function MainInvitation({
           </div>
           <div>
             <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.22em] text-[#0B2042] font-bold block leading-none">
-              {invitation.universityName}
+              {invitation.conductedBy || "Conducted by BCA III Semester"}
             </span>
             <span className="text-[9px] sm:text-[10px] text-[#1E4E8B] tracking-wider uppercase block font-semibold mt-0.5 leading-none">
-              {invitation.department}
+              {invitation.eventType || "Freshers' Welcome 2026"}
             </span>
           </div>
         </div>
@@ -172,7 +172,7 @@ export default function MainInvitation({
         <div className="flex items-center gap-2">
           <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full academic-tag text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.2em] font-semibold">
             <span className="w-1.5 h-1.5 rounded-full bg-[#2F75C7]" />
-            Official Convocation
+            Official Welcome
           </span>
           <h1 className="font-display text-xs sm:text-base lg:text-lg text-[#0B2042] font-extrabold tracking-tight uppercase">
             {invitation.eventName}
@@ -210,12 +210,12 @@ export default function MainInvitation({
 
           {/* Event Schedule & Venue Strip */}
           <section className="mt-2 rounded-xl academic-inset p-2 sm:p-2.5 border border-[#0B2042]/12 bg-[#FFF8F6] shrink-0">
-            <div className="grid grid-cols-3 gap-2 text-left">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-left">
               <div className="flex items-start gap-1.5 sm:gap-2">
                 <Calendar className="w-3.5 h-3.5 text-[#1E4E8B] shrink-0 mt-0.5" />
                 <div className="min-w-0">
                   <p className="text-[9px] font-mono uppercase tracking-wider text-[#1E4E8B] font-bold">Date</p>
-                  <p className="text-[11px] sm:text-xs text-[#0B2042] font-semibold truncate">
+                  <p className="text-[11px] sm:text-xs text-[#0B2042] font-semibold leading-tight">
                     {invitation.eventDate}
                   </p>
                 </div>
@@ -225,17 +225,17 @@ export default function MainInvitation({
                 <Clock className="w-3.5 h-3.5 text-[#1E4E8B] shrink-0 mt-0.5" />
                 <div className="min-w-0">
                   <p className="text-[9px] font-mono uppercase tracking-wider text-[#1E4E8B] font-bold">Time</p>
-                  <p className="text-[11px] sm:text-xs text-[#0B2042] font-semibold truncate">
+                  <p className="text-[11px] sm:text-xs text-[#0B2042] font-semibold leading-tight">
                     {invitation.eventTime}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-1.5 sm:gap-2">
+              <div className="col-span-2 sm:col-span-1 flex items-start gap-1.5 sm:gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#1E4E8B] shrink-0 mt-0.5" />
                 <div className="min-w-0">
                   <p className="text-[9px] font-mono uppercase tracking-wider text-[#1E4E8B] font-bold">Venue</p>
-                  <p className="text-[11px] sm:text-xs text-[#0B2042] font-semibold truncate">
+                  <p className="text-[11px] sm:text-xs text-[#0B2042] font-semibold leading-tight break-words">
                     {invitation.venue}
                   </p>
                 </div>
