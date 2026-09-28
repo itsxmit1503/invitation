@@ -13,7 +13,7 @@ interface WaxSealProps {
 export default function WaxSeal({
   onClick,
   isBreaking = false,
-  label = "AARAMBH '26",
+  label = "VYBE'26",
   subLabel = "Tap to Unseal",
 }: WaxSealProps) {
   return (

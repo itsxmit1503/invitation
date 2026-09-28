@@ -5,7 +5,7 @@ import { InvitationData } from "@/types/invitation";
  * Centralized single source of truth for all components.
  */
 export const SHARED_EVENT_DETAILS = {
-  eventName: "AARAMBH '26",
+  eventName: "VYBE'26",
   eventType: "Freshers' Welcome 2026",
   conductedBy: "Conducted by BCA III Semester",
   department: "BCA III Semester",
@@ -36,7 +36,7 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
     recipientName: "Mr. Ranjit Rajak",
     honorific: "Respected Sir",
     personalNote:
-      "As the new academic year commences, we would be deeply honored by your gracious presence at AARAMBH '26. Having you join us as we welcome the incoming batch will bring tremendous encouragement to the students and set a truly inspiring tone for the journey ahead.",
+      "As the new academic year commences, we would be deeply honored by your gracious presence at VYBE'26. Having you join us as we welcome the incoming batch will bring tremendous encouragement to the students and set a truly inspiring tone for the journey ahead.",
   },
   {
     slug: "pangamban-sandesh-singh",
@@ -50,7 +50,7 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
     recipientName: "Mrs. Kavita Sahu",
     honorific: "Respected Ma'am",
     personalNote:
-      "It is with immense joy and respect that we request the honor of your company at AARAMBH '26. The new students are eager to begin their collegiate journey in your presence, and having you among us will make our welcome ceremony truly memorable.",
+      "It is with immense joy and respect that we request the honor of your company at VYBE'26. The new students are eager to begin their collegiate journey in your presence, and having you among us will make our welcome ceremony truly memorable.",
   },
   {
     slug: "abhishek-bansal",
@@ -64,7 +64,7 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
     recipientName: "Mrs. Richa Pathak",
     honorific: "Respected Ma'am",
     personalNote:
-      "On behalf of the students and organizing team, we humbly extend our cordial invitation to you for AARAMBH '26. Your presence would illuminate the gathering and offer heartfelt encouragement to our freshers as they take their first steps into campus life.",
+      "On behalf of the students and organizing team, we humbly extend our cordial invitation to you for VYBE'26. Your presence would illuminate the gathering and offer heartfelt encouragement to our freshers as they take their first steps into campus life.",
   },
   {
     slug: "kamal-kant",
@@ -78,7 +78,7 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
     recipientName: "Miss. Anubha Prajapati",
     honorific: "Respected Ma'am",
     personalNote:
-      "With deep regard and enthusiasm, we cordially invite you to join us in welcoming the newest members of our academic fraternity. Your presence at AARAMBH '26 will enrich the occasion and provide meaningful inspiration to the incoming batch.",
+      "With deep regard and enthusiasm, we cordially invite you to join us in welcoming the newest members of our academic fraternity. Your presence at VYBE'26 will enrich the occasion and provide meaningful inspiration to the incoming batch.",
   },
   {
     slug: "vidya-marskole",
@@ -92,7 +92,7 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
     recipientName: "Mr. Shubham Maurya",
     honorific: "Respected Sir",
     personalNote:
-      "We cordially invite you to grace AARAMBH '26 with your esteemed presence. The incoming students are embarking on an exciting academic chapter, and sharing this commemorative occasion with you will leave an indelible mark on their campus memories.",
+      "We cordially invite you to grace VYBE'26 with your esteemed presence. The incoming students are embarking on an exciting academic chapter, and sharing this commemorative occasion with you will leave an indelible mark on their campus memories.",
   },
   {
     slug: "manas-ranjan-behera",
@@ -106,7 +106,7 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
     recipientName: "Miss. Suhana Singh",
     honorific: "Respected Ma'am",
     personalNote:
-      "We warmly invite you to be part of AARAMBH '26 as we open our doors to the incoming student cohort. The energy, aspirations, and hopes of the new batch will be elevated manifold by your presence among us for this joyous occasion.",
+      "We warmly invite you to be part of VYBE'26 as we open our doors to the incoming student cohort. The energy, aspirations, and hopes of the new batch will be elevated manifold by your presence among us for this joyous occasion.",
   },
   {
     slug: "sanchita-agarwal",
@@ -127,7 +127,7 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
     recipientName: "Mr. Rehan Gohar",
     honorific: "Respected Sir",
     personalNote:
-      "It gives us immense pleasure to invite you to AARAMBH '26 as our honored guest. Your participation in welcoming the new batch will foster a wonderful sense of academic belonging and inspire our juniors right from their very first day.",
+      "It gives us immense pleasure to invite you to VYBE'26 as our honored guest. Your participation in welcoming the new batch will foster a wonderful sense of academic belonging and inspire our juniors right from their very first day.",
   },
   {
     slug: "ruchi-jain",
@@ -141,28 +141,28 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
     recipientName: "Mr. Gaurav Jain",
     honorific: "Respected Sir",
     personalNote:
-      "We are privileged to cordially invite you to join us for AARAMBH '26. As the department gathers to celebrate new beginnings, having you present among us will bring invaluable warmth, guidance, and happiness to the incoming students and organizers alike.",
+      "We are privileged to cordially invite you to join us for VYBE'26. As the department gathers to celebrate new beginnings, having you present among us will bring invaluable warmth, guidance, and happiness to the incoming students and organizers alike.",
   },
   {
     slug: "laxmi-das",
     recipientName: "Mrs. Laxmi Das",
     honorific: "Respected Ma'am",
     personalNote:
-      "It is our distinct privilege to cordially invite you to AARAMBH '26. As the new academic session commences, your esteemed presence and gracious blessings will bring great inspiration to the students and make our welcome celebration truly memorable.",
+      "It is our distinct privilege to cordially invite you to VYBE'26. As the new academic session commences, your esteemed presence and gracious blessings will bring great inspiration to the students and make our welcome celebration truly memorable.",
   },
   {
     slug: "uma-shankar-rajak",
     recipientName: "Mr. Uma Shankar Rajak",
     honorific: "Respected Sir",
     personalNote:
-      "With profound respect and joy, we warmly invite you to grace AARAMBH '26 with your presence. As our students embark upon their new collegiate journey, celebrating this milestone together with you will offer invaluable encouragement and pride to the entire department.",
+      "With profound respect and joy, we warmly invite you to grace VYBE'26 with your presence. As our students embark upon their new collegiate journey, celebrating this milestone together with you will offer invaluable encouragement and pride to the entire department.",
   },
   {
     slug: "maya-sharma",
     recipientName: "Mrs. Maya Sharma",
     honorific: "Respected Ma'am",
     personalNote:
-      "It is an honor and a privilege to cordially invite you to our annual Freshers' Welcome ceremony. Your gracious mentorship continues to guide us, and having you among us at AARAMBH '26 will make the celebration profoundly meaningful for the incoming batch.",
+      "It is an honor and a privilege to cordially invite you to our annual Freshers' Welcome ceremony. Your gracious mentorship continues to guide us, and having you among us at VYBE'26 will make the celebration profoundly meaningful for the incoming batch.",
   },
 ];
 
