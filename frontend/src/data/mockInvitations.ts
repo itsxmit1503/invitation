@@ -39,8 +39,8 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
       "As the new academic year commences, we would be deeply honored by your gracious presence at VYBE'26. Having you join us as we welcome the incoming batch will bring tremendous encouragement to the students and set a truly inspiring tone for the journey ahead.",
   },
   {
-    slug: "pangamban-sandesh-singh",
-    recipientName: "Mr. Pangamban Sandesh Singh",
+    slug: "pangambam-sendash-singh",
+    recipientName: "Dr. Pangambam Sendash Singh",
     honorific: "Respected Sir",
     personalNote:
       "The organizing committee and the student community cordially invite you to be a part of our annual Freshers' Welcome. Your presence at the gathering would mean a great deal to all of us and add a profound sense of warmth to this milestone celebration.",
@@ -205,6 +205,10 @@ export const SLUG_ALIASES: Record<string, string> = {
   "vidya-marksole": "vidya-marskole",
   "dr-laxmi-das": "laxmi-das",
   "uma-shanker-rajak": "uma-shankar-rajak",
+  "pangamban-sandesh-singh": "pangambam-sendash-singh",
+  "dr-pangambam-sendash-singh": "pangambam-sendash-singh",
+  "dr-pangamban-sandesh-singh": "pangambam-sendash-singh",
+  "pangamban-sendash-singh": "pangambam-sendash-singh",
 };
 
 /**
