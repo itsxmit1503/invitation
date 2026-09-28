@@ -150,6 +150,20 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
     personalNote:
       "It is our distinct privilege to cordially invite you to AARAMBH '26. As the new academic session commences, your esteemed presence and scholarly blessings will bring great inspiration to the students and make our welcome celebration truly memorable.",
   },
+  {
+    slug: "uma-shankar-rajak",
+    recipientName: "Mr. Uma Shankar Rajak",
+    honorific: "Respected Sir",
+    personalNote:
+      "With profound respect and joy, we warmly invite you to grace AARAMBH '26 with your presence. As our students embark upon their new collegiate journey, celebrating this milestone together with you will offer invaluable encouragement and pride to the entire department.",
+  },
+  {
+    slug: "maya-sharma",
+    recipientName: "Mrs. Maya Sharma",
+    honorific: "Respected Ma'am",
+    personalNote:
+      "It is an honor and a privilege to cordially invite you to our annual Freshers' Welcome ceremony. Your gracious mentorship continues to guide us, and having you among us at AARAMBH '26 will make the celebration profoundly meaningful for the incoming batch.",
+  },
 ];
 
 /**
@@ -190,6 +204,7 @@ export const SLUG_ALIASES: Record<string, string> = {
   "default": "ranjit-rajak",
   "vidya-marksole": "vidya-marskole",
   "laxmi-das": "dr-laxmi-das",
+  "uma-shanker-rajak": "uma-shankar-rajak",
 };
 
 /**
