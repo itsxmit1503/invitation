@@ -144,11 +144,11 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
       "We are privileged to cordially invite you to join us for AARAMBH '26. As the department gathers to celebrate new beginnings, having you present among us will bring invaluable warmth, guidance, and happiness to the incoming students and organizers alike.",
   },
   {
-    slug: "dr-laxmi-das",
-    recipientName: "Dr. Laxmi Das",
+    slug: "laxmi-das",
+    recipientName: "Mrs. Laxmi Das",
     honorific: "Respected Ma'am",
     personalNote:
-      "It is our distinct privilege to cordially invite you to AARAMBH '26. As the new academic session commences, your esteemed presence and scholarly blessings will bring great inspiration to the students and make our welcome celebration truly memorable.",
+      "It is our distinct privilege to cordially invite you to AARAMBH '26. As the new academic session commences, your esteemed presence and gracious blessings will bring great inspiration to the students and make our welcome celebration truly memorable.",
   },
   {
     slug: "uma-shankar-rajak",
@@ -203,7 +203,7 @@ export const SLUG_ALIASES: Record<string, string> = {
   "9pq41za": "kavita-sahu",
   "default": "ranjit-rajak",
   "vidya-marksole": "vidya-marskole",
-  "laxmi-das": "dr-laxmi-das",
+  "dr-laxmi-das": "laxmi-das",
   "uma-shanker-rajak": "uma-shankar-rajak",
 };
 
