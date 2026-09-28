@@ -33,7 +33,7 @@ export interface FacultyConfig {
 export const FACULTY_RECIPIENTS: FacultyConfig[] = [
   {
     slug: "ranjit-rajak",
-    recipientName: "Mr. Ranjit Rajak",
+    recipientName: "Dr. Ranjit Rajak",
     honorific: "Respected Sir",
     personalNote:
       "As the new academic year commences, we would be deeply honored by your gracious presence at VYBE'26. Having you join us as we welcome the incoming batch will bring tremendous encouragement to the students and set a truly inspiring tone for the journey ahead.",
@@ -47,14 +47,14 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
   },
   {
     slug: "kavita-sahu",
-    recipientName: "Mrs. Kavita Sahu",
+    recipientName: "Dr. Kavita Sahu",
     honorific: "Respected Ma'am",
     personalNote:
       "It is with immense joy and respect that we request the honor of your company at VYBE'26. The new students are eager to begin their collegiate journey in your presence, and having you among us will make our welcome ceremony truly memorable.",
   },
   {
     slug: "abhishek-bansal",
-    recipientName: "Mr. Abhishek Bansal",
+    recipientName: "Dr. Abhishek Bansal",
     honorific: "Respected Sir",
     personalNote:
       "We warmly invite you to grace the annual Freshers' Welcome as our honored guest. The commencement of a new academic session is a special occasion for our department, and celebrating this gathering alongside you will be a genuine privilege for the entire batch.",
@@ -209,6 +209,9 @@ export const SLUG_ALIASES: Record<string, string> = {
   "dr-pangambam-sendash-singh": "pangambam-sendash-singh",
   "dr-pangamban-sandesh-singh": "pangambam-sendash-singh",
   "pangamban-sendash-singh": "pangambam-sendash-singh",
+  "dr-ranjit-rajak": "ranjit-rajak",
+  "dr-kavita-sahu": "kavita-sahu",
+  "dr-abhishek-bansal": "abhishek-bansal",
 };
 
 /**
