@@ -164,6 +164,13 @@ export const FACULTY_RECIPIENTS: FacultyConfig[] = [
     personalNote:
       "It is an honor and a privilege to cordially invite you to our annual Freshers' Welcome ceremony. Your gracious mentorship continues to guide us, and having you among us at VYBE'26 will make the celebration profoundly meaningful for the incoming batch.",
   },
+  {
+    slug: "ashish-sir",
+    recipientName: "Mr. Ashish Sir",
+    honorific: "Respected Sir",
+    personalNote:
+      "With great respect and admiration, we cordially invite you to join us for VYBE'26. Having your energetic guidance and warm presence among us as we welcome our newest students will make our Freshers' Welcome ceremony truly exceptional.",
+  },
 ];
 
 /**
@@ -212,6 +219,8 @@ export const SLUG_ALIASES: Record<string, string> = {
   "dr-ranjit-rajak": "ranjit-rajak",
   "dr-kavita-sahu": "kavita-sahu",
   "dr-abhishek-bansal": "abhishek-bansal",
+  "mr-ashish-sir": "ashish-sir",
+  "ashish": "ashish-sir",
 };
 
 /**
